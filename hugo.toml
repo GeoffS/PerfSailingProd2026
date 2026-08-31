@@ -1,0 +1,8 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Performance Sailing Products"
+theme = "psp"
+
+[params]
+  description = "Performance Sailing Products - Custom sailing equipment and parts"
+  copyright = "2026 Geoff Sobering - All Rights Reserved"

@@ -1,0 +1,69 @@
+{{ define "sidebar" }}
+  <div class="span-4">
+    <div id="sidebarLinks" class="sidebarLinks">
+      <p class="sidebarLink"><a href="{{ .Site.BaseURL }}" class="sidebar">Home</a></p>
+      <hr />
+      <p class="sidebarLinkSection"><span class="sidebarLinkSection">Products:</span></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-dn-iceboat/">DN Iceboat</a></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-blokart/">blokart<sup class="reg">®</sup></a></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-mini-skeeter/">Mini-Skeeter<br />Iceboat</a></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-cam-mounts/">Camera<br />Mounts</a></p>
+      <hr />
+      <p class="sidebarLinkSection"><span class="sidebarLinkSection">Parts:</span></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/parts-ratchets/">Ratchet Blocks</a></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/parts-viadana/">Viadana</a></p>
+      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/parts-nautos/">Nautos</a></p>
+      <hr />
+      <p class="sidebarLink"><a href="{{ .Site.BaseURL }}contact/" class="sidebar">Contact Us</a></p>
+    </div>
+    
+    <div id="sidebar2Links" class="sidebarLinks" style="margin-top:30px;">
+      <p class="sidebarLinkSection"><span class="sidebarLinkSection">Projects:</span></p>
+      <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/">Projects</a></p>
+    </div>
+  </div>
+{{ end }}
+
+{{ define "main" }}
+  <div class="parts">
+    {{ if .Params.sections }}
+      {{ range .Params.sections }}
+        <div class="span-20 clear partsSubHeading">{{ .heading }}</div>
+        <hr class="sectionSeparator" />
+        
+        {{ range .items }}
+          {{ if eq .type "simple" }}
+            <hr class="parts" />
+            <div class="span-1 clear spacer">.</div>
+            <div class="span-3 push-1 product" style="margin:0;">
+              {{ if .image }}
+                <img class="tn" src="{{ .image }}" width="{{ .imageWidth | default "100" }}" height="{{ .imageHeight | default "100" }}" alt="{{ .name }}" />
+              {{ else }}
+                <img class="tn" src="/products/placeholder.png" width="100" height="100" alt="Placeholder" />
+              {{ end }}
+            </div>
+            <div class="span-14 product">
+              {{ if .link }}
+                <p>{{ .description | safeHTML }}<br />
+                <a href="{{ .link }}">Click here for more information and photos.</a></p>
+              {{ else }}
+                <p>{{ .description | safeHTML }}</p>
+              {{ end }}
+            </div>
+            <div class="span-2 right productPrice">
+              {{ .price | safeHTML }}
+            </div>
+          {{ else if eq .type "descriptive" }}
+            <hr class="parts" />
+            <div class="span-20 parts">
+              {{ .content | safeHTML }}
+            </div>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      {{ .Content }}
+    {{ end }}
+  </div>
+{{ end }}
+

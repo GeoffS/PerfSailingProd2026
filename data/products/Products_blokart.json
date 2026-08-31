@@ -1,0 +1,131 @@
+{
+  "title": "Products blokart",
+  "main_heading": "blokart\u00ae Landsailer Products:",
+  "sections": [
+    {
+      "sub_heading": "Rigging and Controls:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "products/IMG_7482_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "",
+          "description": "The <span class=\"productName\">Micro Cam-Cleat Mount for blokart<sup class=\"reg\">\u00ae</sup> diagonal tube</span> allows mounting a micro-sized cam-cleat\n      (fastener spacing 27mm or 1 1/6\") to the diagonal side tube on a blokart<sup class=\"reg\">\u00ae</sup> landsailer (or any other 3/4\" 19mm tube)<br />\n      (Note: the cam-cleat is not included).<br />\n      <a href=\"19mmCCMount.html\">Click here for more information and photos.</a>",
+          "price": "$35 + Shipping",
+          "link": "19mmCCMount.html",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/IMG_7200_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Micro Cam-Cleat Mount for blokart\u00ae steering tube",
+          "description": "<span class=\"productName\">Micro Cam-Cleat Mount for blokart\u00ae steering tube</span> allows mounting a micro-sized cam-cleat\n      (fastener spacing 27mm or 1 1/6\") to the steering tube on a blokart<sup class=\"reg\">\u00ae</sup> landsailer (or any other 7/8\" 22mm tube)<br />\n      <a href=\"22mmCCMount.html\">Click here for more information and photos.</a>",
+          "price": "$45 + Shipping",
+          "link": "22mmCCMount.html",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/PSP010_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Budget 6:1 Down-Haul with Integral Cleat",
+          "description": "<span class=\"productName\">Budget 6:1 Down-Haul with Integral Cleat</span><br />\n      I put together this package as the lowest cost, easiest way to put a low-friction, 6:1\n\t  performance-class downhaul on your blokart<sup class=\"reg\">\u00ae</sup>.<br />\n      <a href=\"PSP010.html\">Click here for more information and photos.</a>",
+          "price": "$115 + Shipping",
+          "link": "PSP010.html",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/PSP011_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Budget 6:1 Down-Haul with Side-Tube Cleat",
+          "description": "<span class=\"productName\">Budget 6:1 Down-Haul with Side-Tube Cleat</span><br />\n      This is very similar to the <b>Budget 6:1 Down-Haul with Integral Cleat</b>, but it mounts the cam-cleat\n      on the side-tube for more convenient adjustment.<br />\n      <a href=\"PSP011.html\">Click here for more information and photos.</a>",
+          "price": "$140 + Shipping",
+          "link": "PSP011.html",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/PSP012_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Production Dowhaul Upgrade Kit",
+          "description": "<span class=\"productName\">Production Dowhaul Upgrade Kit</span><br />\n      The latest IBRA rules update will allow the use of a double-block in place of the ring at the bottom of\n      downhaul in the Production Class.<br />\n      This kit includes a double-block and new line. All you need to do is follow the simple instructions\n      to re-rig your downhaul using the original hook-fitting at the sail.<br />\n      <a href=\"PSP012.html\">Click here for more information and photos.</a>",
+          "price": "$35 + Shipping",
+          "link": "PSP012.html",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/CascadeDownhaul_tn.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "",
+          "description": "COMING SOON!<br />\n      <span class=\"productName\">Complete blokart<sup class=\"reg\">\u00ae</sup> 6:1 Cascade Downhaul</span>. This design combines a 3:1\n      purchase at the sail connected with a 2:1 purchase going to the cleat on the side-tube to make a very low-friction 6:1 purchase.<br />\n      Includes all blocks, lines, and hardware.",
+          "price": "$140 + Shipping",
+          "link": "",
+          "contactUrl": "/contact/"
+        }
+      ]
+    },
+    {
+      "sub_heading": "Ball Bearings:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "products/620X-2RS_tn.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "15mm (6202) Bearing",
+          "description": "<span class=\"productName\">15mm (6202) Bearing</span><br />\n      For older rear axles.",
+          "price": "",
+          "link": "",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/6003-2RS_tn.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "17mm (6003) Bearing",
+          "description": "<span class=\"productName\">17mm (6003) Bearing</span><br />\n         For newer rear axles and the <i>Big Foot</i> front fork.",
+          "price": "",
+          "link": "",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "products/620X-2RS_tn.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Standard Front Wheel (6201) Bearing",
+          "description": "<span class=\"productName\">Standard Front Wheel (6201) Bearing</span>.",
+          "price": "",
+          "link": "",
+          "contactUrl": "/contact/"
+        }
+      ]
+    },
+    {
+      "sub_heading": "Custom Products:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "products/CascadeDownhaul_tn.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "",
+          "description": "<span class=\"productName\">Custom blokart<sup class=\"reg\">\u00ae</sup> Downhaul</span><br />\n      We'll be happy to fabricate a downhaul using parts from your favorite hardware maufacturers\n      and customized to your needs. We can help you choose the best design, blocks, shackles, cleats, and line.",
+          "price": "$80 + materials (blocks, line, splicing, etc.)",
+          "link": "",
+          "contactUrl": "/contact/"
+        }
+      ]
+    }
+  ]
+}

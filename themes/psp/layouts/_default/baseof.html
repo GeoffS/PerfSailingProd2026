@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-y: scroll;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}blueprint/screen.css" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}blueprint/print.css" media="print" />
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}GSSTstyle.css" />
+  </head>
+  <body style="background-image:url({{ .Site.BaseURL }}Gradient-450.png); background-repeat: repeat-x;">
+    <div class="container">
+      <div class="span-24 PSPBanner878x100">
+        <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.BaseURL }}PSPBanner878x100.png" width="878" height="100" alt="Performance Sailing Products" /></a>
+      </div>
+      
+      {{ block "sidebar" . }}
+        <div class="span-4">
+          <div id="sidebarLinks" class="sidebarLinks">
+            <p class="sidebarLink"><a href="{{ .Site.BaseURL }}" class="sidebar">Home</a></p>
+          </div>
+        </div>
+      {{ end }}
+      
+      <div id="ContentDiv" class="span-20 last">
+        {{ block "main" . }}
+          <div class="product">
+            {{ .Content }}
+          </div>
+        {{ end }}
+      </div>
+      
+      <div class="span-24">
+        <p style="font-size:8pt; text-align:center; background-color:#041F87; color:#f0f0ff;">Copyright {{ .Site.Params.copyright }}</p>
+      </div>
+    </div>
+  </body>
+</html>

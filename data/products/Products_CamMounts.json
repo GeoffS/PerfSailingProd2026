@@ -1,0 +1,49 @@
+{
+  "title": "Products CamMounts",
+  "main_heading": "Camera Mounts:",
+  "sections": [
+    {
+      "sub_heading": "Standard Products:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "products/PSP600_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Clamp with Ball-Head",
+          "description": "The <span class=\"productName\">Clamp with Ball-Head</span> allows mounting a camera using the standard GoPro mounting hardware to a tube.<br />\n      <a href=\"PSP600.html\">Click here for more information and photos.</a>",
+          "price": "$30 + Shipping",
+          "link": "PSP600.html",
+          "contactUrl": "/contact/"
+        },
+        {
+          "type": "simple",
+          "image": "",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "",
+          "description": "COMING SOON!<br />\n      <span class=\"productName\">blokart<sup class=\"reg\">\u00ae</sup> boom mount</span>.",
+          "price": "$35 + Shipping",
+          "link": "",
+          "contactUrl": "/contact/"
+        }
+      ]
+    },
+    {
+      "sub_heading": "Custom Products:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Custom Camera Mount",
+          "description": "<span class=\"productName\">Custom Camera Mount</span><br />\n      We'll be happy to fabricate a mount for any camera or application.",
+          "price": "",
+          "link": "",
+          "contactUrl": "/contact/"
+        }
+      ]
+    }
+  ]
+}

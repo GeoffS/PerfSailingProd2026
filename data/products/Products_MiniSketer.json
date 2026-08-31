@@ -1,0 +1,38 @@
+{
+  "title": "Products MiniSketer",
+  "main_heading": "\n      Mini-Skeeter Iceboat/Landsailer Products:",
+  "sections": [
+    {
+      "sub_heading": "Standard Products:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "products/JEmainsheet_side_100.jpg",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "Mini-Skeeter Mainsheet Blocks",
+          "description": "<span class=\"productName\">Mini-Skeeter Mainsheet Blocks</span><br />\n      This is the mainsheet block configuration John designed for his Mini-Skeeter.<br />\n      It consists of seven 40mm Viadana blocks (p/n 11.82) for the purchase and a 57mm ratchet-block (p/n 14.10) at the mast.<br />\n      <a href=\"MiniSkeeterMainsheetBlocks.html\">Click here for more information and photos.</a>",
+          "price": "$130 + Shipping",
+          "link": "MiniSkeeterMainsheetBlocks.html",
+          "contactUrl": "/contact/"
+        }
+      ]
+    },
+    {
+      "sub_heading": "Custom Products:",
+      "products": [
+        {
+          "type": "simple",
+          "image": "",
+          "imageWidth": "100",
+          "imageHeight": "100",
+          "name": "",
+          "description": "We can assemble a custom mainsheet system using any blocks you want.",
+          "price": "",
+          "link": "",
+          "contactUrl": "/contact/"
+        }
+      ]
+    }
+  ]
+}

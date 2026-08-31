@@ -1,0 +1,42 @@
+{{/* 
+  Simple Product Entry Partial
+  Used for product/parts listings with image, description, and price
+  
+  Context fields:
+    - image: image path
+    - imageWidth: width attribute
+    - imageHeight: height attribute  
+    - name: product/part name
+    - description: HTML content describing the product
+    - price: price string
+    - contactUrl: URL for contact/order link (optional)
+*/}}
+
+<hr class="product" />
+<div class="span-1 clear spacer">.</div>
+
+<div class="span-3 push-1 product" style="margin:0;">
+  {{ if .image }}
+    <img class="tn" src="{{ .image }}" width="{{ .imageWidth | default "100" }}" height="{{ .imageHeight | default "100" }}" alt="{{ .name }}" />
+  {{ else }}
+    <img class="tn" src="/products/placeholder.png" width="100" height="100" alt="Placeholder" />
+  {{ end }}
+</div>
+
+<div class="span-14 product">
+  {{ if .link }}
+    <p>{{ .description | safeHTML }}<br />
+    <a href="{{ .link }}">Click here for more information and photos.</a></p>
+  {{ else }}
+    <p>{{ .description | safeHTML }}</p>
+  {{ end }}
+</div>
+
+<div class="span-2 right productPrice">
+  {{ .price | safeHTML }}
+  {{ if .contactUrl }}
+    <div class="ContactUsOrder" style="margin-top:10px;">
+      <a href="{{ .contactUrl }}">Contact Us to Order</a>
+    </div>
+  {{ end }}
+</div>

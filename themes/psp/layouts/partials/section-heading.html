@@ -1,0 +1,20 @@
+{{/* 
+  Section Heading Partial
+  Used for main headings and sub-headings
+  
+  Context fields:
+    - mainHeading: main heading text (optional, for main section heading)
+    - subHeading: sub-heading text
+    - level: "main" or "sub" (affects CSS class)
+*/}}
+
+{{ if .mainHeading }}
+  <div class="span-20 clear productHeading">{{ .mainHeading }}</div>
+  <hr class="sectionSeparator" />
+{{ end }}
+
+{{ if .subHeading }}
+  <div class="span-20 {{ if eq .level "main" }}left {{ end }}clear {{ if eq .level "main" }}productSubHeading{{ else }}partsSubHeading{{ end }}">
+    <span class="{{ if eq .level "main" }}productSubHeading{{ else }}partsSubHeading{{ end }}">{{ .subHeading }}</span>
+  </div>
+{{ end }}

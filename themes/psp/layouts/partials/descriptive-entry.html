@@ -1,0 +1,29 @@
+{{/* 
+  Descriptive Product Entry Partial
+  Used for complex sections with tables or more detailed content
+  
+  Context fields:
+    - heading: optional sub-heading
+    - content: HTML content
+    - image: optional image path
+    - imageWidth: width
+    - imageHeight: height
+    - imageStyle: optional style attribute
+*/}}
+
+{{ if .heading }}
+  <div class="span-20 clear partsSubHeading">{{ .heading }}</div>
+{{ end }}
+
+<hr class="sectionSeparator" />
+
+<div class="span-20 {{ if eq .type "parts" }}parts{{ else }}product{{ end }}" style="{{ .style }}">
+  {{ if .image }}
+    <div class="partsTableDiv">
+      {{ .content | safeHTML }}
+      <img class="" style="{{ .imageStyle | default "margin-left:85px;" }}" src="{{ .image }}" width="{{ .imageWidth }}" height="{{ .imageHeight }}" alt="{{ .heading }}" />
+    </div>
+  {{ else }}
+    {{ .content | safeHTML }}
+  {{ end }}
+</div>

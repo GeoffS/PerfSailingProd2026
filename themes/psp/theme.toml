@@ -1,0 +1,12 @@
+name = "Performance Sailing Products"
+license = "MIT"
+licenselink = "https://github.com/codingislove/hugo-psp-theme/blob/master/LICENSE.md"
+description = "Hugo theme for Performance Sailing Products"
+homepage = "https://github.com/example/hugo-psp-theme"
+tags = ["responsive", "blog", "catalog"]
+features = ["blog", "responsive"]
+min_version = "0.37.0"
+
+[author]
+  name = "Geoff Sobering"
+  homepage = "https://github.com/example"
