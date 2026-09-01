@@ -4,20 +4,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{{ .Title }} - {{ .Site.Title }}</title>
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}blueprint/screen.css" />
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}blueprint/print.css" media="print" />
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}GSSTstyle.css" />
+    <link rel="stylesheet" href="/blueprint/screen.css" />
+    <link rel="stylesheet" href="/blueprint/print.css" media="print" />
+    <link rel="stylesheet" href="/GSSTstyle.css" />
   </head>
-  <body style="background-image:url({{ .Site.BaseURL }}Gradient-450.png); background-repeat: repeat-x;">
+  <body style="background-image:url(/Gradient-450.png); background-repeat: repeat-x;">
     <div class="container">
       <div class="span-24 PSPBanner878x100">
-        <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.BaseURL }}PSPBanner878x100.png" width="878" height="100" alt="Performance Sailing Products" /></a>
+        <a href="/"><img src="/PSPBanner878x100.png" width="878" height="100" alt="Performance Sailing Products" /></a>
       </div>
       
       {{ block "sidebar" . }}
         <div class="span-4">
           <div id="sidebarLinks" class="sidebarLinks">
-            <p class="sidebarLink"><a href="{{ .Site.BaseURL }}" class="sidebar">Home</a></p>
+            <p class="sidebarLink"><a href="/" class="sidebar">Home</a></p>
+            <hr />
+            <p class="sidebarLinkSection"><span class="sidebarLinkSection">Products:</span></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_dn/">DN Iceboat</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_blokart/">blokart<sup class="reg">®</sup></a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_minisketer/">Mini-Skeeter<br />Iceboat</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_cammounts/">Camera<br />Mounts</a></p>
+            <hr />
+            <p class="sidebarLinkSection"><span class="sidebarLinkSection">Parts:</span></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/parts/parts_ratchets/">Ratchet Blocks</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/parts/parts_viadana/">Viadana</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="/parts/parts_nautos/">Nautos</a></p>
+            <hr />
+            <p class="sidebarLink"><a href="/contact/" class="sidebar">Contact Us</a></p>
           </div>
         </div>
       {{ end }}

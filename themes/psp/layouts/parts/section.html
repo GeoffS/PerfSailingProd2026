@@ -1,29 +1,3 @@
-{{ define "sidebar" }}
-  <div class="span-4">
-    <div id="sidebarLinks" class="sidebarLinks">
-      <p class="sidebarLink"><a href="{{ .Site.BaseURL }}" class="sidebar">Home</a></p>
-      <hr />
-      <p class="sidebarLinkSection"><span class="sidebarLinkSection">Products:</span></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-dn-iceboat/">DN Iceboat</a></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-blokart/">blokart<sup class="reg">®</sup></a></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-mini-skeeter/">Mini-Skeeter<br />Iceboat</a></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/products-cam-mounts/">Camera<br />Mounts</a></p>
-      <hr />
-      <p class="sidebarLinkSection"><span class="sidebarLinkSection">Parts:</span></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/parts-ratchets/">Ratchet Blocks</a></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/parts-viadana/">Viadana</a></p>
-      <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/parts-nautos/">Nautos</a></p>
-      <hr />
-      <p class="sidebarLink"><a href="{{ .Site.BaseURL }}contact/" class="sidebar">Contact Us</a></p>
-    </div>
-    
-    <div id="sidebar2Links" class="sidebarLinks" style="margin-top:30px;">
-      <p class="sidebarLinkSection"><span class="sidebarLinkSection">Projects:</span></p>
-      <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/">Projects</a></p>
-    </div>
-  </div>
-{{ end }}
-
 {{ define "main" }}
   <div class="parts">
     {{ if .Params.sections }}

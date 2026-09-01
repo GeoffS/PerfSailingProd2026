@@ -9,19 +9,19 @@ sections:
     count: 1
     items:
       - type: descriptive
-        image: "parts/Viadana22mmBlocks.jpg"
+        image: "/parts/Viadana22mmBlocks.jpg"
   - heading: "Other Parts:"
     count: 2
     items:
       - type: simple
         name: "15mm S.S. Snap Shackle"
-        description: "29.35 - <span class=\"productName\">15mm S.S. Snap Shackle</span>..."
-        image: "parts/Viadana_29.35.png"
+        description: "<p>29.35 - <span class=\"productName\">15mm S.S. Snap Shackle</span></p>"
+        image: "/parts/Viadana_29.35.png"
         price: "$8.34 + Shipping"
       - type: simple
         name: "23mm S.S. Snap Shackle"
-        description: "29.36 - <span class=\"productName\">23mm S.S. Snap Shackle</span>..."
-        image: "parts/Viadana_29.36.png"
+        description: "<p>29.36 - <span class=\"productName\">23mm S.S. Snap Shackle</span></p>"
+        image: "/parts/Viadana_29.36.png"
         price: "$11.97 + Shipping"
 ---
 

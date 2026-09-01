@@ -8,8 +8,8 @@
         {
           "type": "descriptive",
           "heading": "",
-          "content": "<div class=\"span-20 parts\" style=\"\">\n   \t\t<div class=\"partsTableDiv\">\n   \t\t\t<span class=\"partsTableTitle\">(<b>Note:</b> prices do not include shipping)</span>\n   \t\t\t<div class=\"partsTableTitle\"> </div>\n   \t\t\t<table class=\"parts\">\n   \t\t\t\t<thead><tr><td class=\"item\">Item</td><td class=\"descr\">Description</td><td class=\"price\">Price</td><td class=\"avail\">Availability</td></tr></thead>\n   \t\t\t\t<tbody>\n   \t\t\t\t\t<tr><td class=\"item\">10.50</td><td class=\"descr\">Single Block</td><td class=\"price\">$9.00</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.51</td><td class=\"descr\">Single Block with Becket</td><td class=\"price\">$11.12</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.54</td><td class=\"descr\">Double Block with Becket</td><td class=\"price\">$26.21</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.56</td><td class=\"descr\">Triple Block</td><td class=\"price\">$32.25</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.57</td><td class=\"descr\">Triple Block with Becket</td><td class=\"price\">$34.24</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.64</td><td class=\"descr\">Triple Block with Becket and Carbon-Fiber Cam-Cleat</td><td class=\"price\">$61.35</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t</tbody>\n   \t\t\t</table>\n   \t\t</div>\n\t\t<img class=\"\" style=\"margin-left:85px;\" src=\"parts/Viadana22mmBlocks.jpg\" width=\"619\" height=\"366\" />\n\t</div>\n\n   \n   <div class=\"span-20 clear\">",
-          "image": "parts/Viadana22mmBlocks.jpg",
+          "content": "<div class=\"span-20 parts\" style=\"\">\n   \t\t<div class=\"partsTableDiv\">\n   \t\t\t<span class=\"partsTableTitle\">(<b>Note:</b> prices do not include shipping)</span>\n   \t\t\t<div class=\"partsTableTitle\"> </div>\n   \t\t\t<table class=\"parts\">\n   \t\t\t\t<thead><tr><td class=\"item\">Item</td><td class=\"descr\">Description</td><td class=\"price\">Price</td><td class=\"avail\">Availability</td></tr></thead>\n   \t\t\t\t<tbody>\n   \t\t\t\t\t<tr><td class=\"item\">10.50</td><td class=\"descr\">Single Block</td><td class=\"price\">$9.00</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.51</td><td class=\"descr\">Single Block with Becket</td><td class=\"price\">$11.12</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.54</td><td class=\"descr\">Double Block with Becket</td><td class=\"price\">$26.21</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.56</td><td class=\"descr\">Triple Block</td><td class=\"price\">$32.25</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.57</td><td class=\"descr\">Triple Block with Becket</td><td class=\"price\">$34.24</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t\t<tr><td class=\"item\">10.64</td><td class=\"descr\">Triple Block with Becket and Carbon-Fiber Cam-Cleat</td><td class=\"price\">$61.35</td><td class=\"avail\">In Stock</td></tr>\n   \t\t\t\t</tbody>\n   \t\t\t</table>\n   \t\t</div>\n\t\t<img class=\"\" style=\"margin-left:85px;\" src=\"/parts/Viadana22mmBlocks.jpg\" width=\"619\" height=\"366\" />\n\t</div>\n\n   \n   <div class=\"span-20 clear\">",
+          "image": "/parts/Viadana22mmBlocks.jpg",
           "imageWidth": "619",
           "imageHeight": "366"
         }
@@ -20,22 +20,22 @@
       "products": [
         {
           "type": "simple",
-          "image": "parts/Viadana_29.35.png",
+          "image": "/parts/Viadana_29.35.png",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "15mm S.S. Snap Shackle",
-          "description": "29.35 - <span class=\"productName\">15mm S.S. Snap Shackle</span>",
+          "description": "<p>29.35 - <span class=\"productName\">15mm S.S. Snap Shackle</span></p>",
           "price": "$8.34 + Shipping",
           "link": "",
           "contactUrl": "/contact/"
         },
         {
           "type": "simple",
-          "image": "parts/Viadana_29.36.png",
+          "image": "/parts/Viadana_29.36.png",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "23mm S.S. Snap Shackle",
-          "description": "29.36 - <span class=\"productName\">23mm S.S. Snap Shackle</span>",
+          "description": "<p>29.36 - <span class=\"productName\">23mm S.S. Snap Shackle</span></p>",
           "price": "$11.97 + Shipping",
           "link": "",
           "contactUrl": "/contact/"

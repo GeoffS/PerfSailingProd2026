@@ -100,19 +100,49 @@ class ProductExtractor:
         
         return products
     
+    def normalize_path(self, path: str) -> str:
+        """Convert relative paths to absolute paths by prepending /"""
+        if path and not path.startswith('/'):
+            return '/' + path
+        return path
+    
+    def normalize_html_links(self, html: str) -> str:
+        """Normalize relative href and src attributes in HTML to absolute paths"""
+        # Normalize href attributes
+        def normalize_href(match):
+            href = match.group(1)
+            if href and not href.startswith('/') and not href.startswith('http'):
+                href = '/' + href
+            return f'href="{href}"'
+        
+        # Normalize src attributes  
+        def normalize_src(match):
+            src = match.group(1)
+            if src and not src.startswith('/') and not src.startswith('http'):
+                src = '/' + src
+            return f'src="{src}"'
+        
+        html = re.sub(r'href="([^"]*)"', normalize_href, html)
+        html = re.sub(r'src="([^"]*)"', normalize_src, html)
+        return html
+    
+    
     def parse_descriptive_block(self, block_html: str) -> Dict:
         """Parse a descriptive entry block (tables, complex content)"""
+        # Normalize relative links and image paths to absolute paths
+        normalized_html = self.normalize_html_links(block_html)
+        
         product = {
             'type': 'descriptive',
             'heading': '',
-            'content': block_html.strip(),
+            'content': normalized_html.strip(),
             'image': '',
             'imageWidth': '',
             'imageHeight': ''
         }
         
         # Try to extract an image from the descriptive block
-        img_match = re.search(r'<img[^>]*src="([^"]*)"[^>]*width="(\d+)"[^>]*height="(\d+)"', block_html)
+        img_match = re.search(r'<img[^>]*src="([^"]*)"[^>]*width="(\d+)"[^>]*height="(\d+)"', normalized_html)
         if img_match:
             product['image'] = img_match.group(1)
             product['imageWidth'] = img_match.group(2)
@@ -139,7 +169,7 @@ class ProductExtractor:
         if img_match:
             src = img_match.group(1)
             if 'placeholder' not in src:
-                product['image'] = src
+                product['image'] = self.normalize_path(src)
                 product['imageWidth'] = img_match.group(2)
                 product['imageHeight'] = img_match.group(3)
         
@@ -148,16 +178,22 @@ class ProductExtractor:
         if name_match:
             product['name'] = name_match.group(1).strip()
         
-        # Extract description - the paragraph after image
-        desc_pattern = r'<div class="span-14[^>]*>.*?<p>(.*?)</p>'
+        # Extract full description - all content in the span-14 div
+        desc_pattern = r'<div class="span-14[^>]*>(.*?)</div>\s*<div class="span-2 right productPrice"'
         desc_match = re.search(desc_pattern, block_html, re.DOTALL)
         if desc_match:
-            desc = desc_match.group(1).strip()
+            desc_html = desc_match.group(1).strip()
+            
+            # Normalize relative links to absolute paths
+            desc_html = self.normalize_html_links(desc_html)
+            
             # Extract link if present
-            link_match = re.search(r'<a href="([^"]+)">Click here', desc)
+            link_match = re.search(r'<a href="([^"]+)">Click here', desc_html)
             if link_match:
-                product['link'] = link_match.group(1)
-            product['description'] = desc
+                product['link'] = link_match.group(1)  # Already normalized
+            
+            # Store the full HTML description (will be rendered with safeHTML)
+            product['description'] = desc_html
         
         # Extract price
         price_pattern = r'<div class="span-2 right productPrice">([^<]+(?:<[^>]+>[^<]+</[^>]+>)*)'
@@ -200,9 +236,9 @@ def generate_hugo_content(file_name: str, title: str, main_heading: str, section
                 name = product['name'].replace('"', '\\"')
                 front_matter_lines.append(f'        name: "{name}"')
             if product.get('description'):
-                # Escape for YAML
-                desc = product['description'][:100].replace('"', '\\"').replace('\n', ' ')
-                front_matter_lines.append(f'        description: "{desc}..."')
+                # Store full description, properly escaped for YAML
+                desc = product['description'].replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ')
+                front_matter_lines.append(f'        description: "{desc}"')
             if product.get('image'):
                 front_matter_lines.append(f'        image: "{product["image"]}"')
             if product.get('price'):

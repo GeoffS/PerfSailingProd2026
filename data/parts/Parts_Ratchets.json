@@ -11,7 +11,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "",
-          "description": "<span class=\"productName\"><img src=\"/misc/viadana_91x16.png\" alt=\"Viadana\" width=\"91\" height=\"16\" /> 14.10<br />\n      57mm Diameter Ball Bearing Ratchet Block With Slotted Aluminum Sheave</span>",
+          "description": "<p><span class=\"productName\"><img src=\"/misc/viadana_91x16.png\" alt=\"Viadana\" width=\"91\" height=\"16\" /> 14.10<br />\n      57mm Diameter Ball Bearing Ratchet Block With Slotted Aluminum Sheave</span>\n      </p>",
           "price": "$65 + Shipping",
           "link": "",
           "contactUrl": "/contact/"
@@ -22,7 +22,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "",
-          "description": "<span class=\"productName\"><img src=\"/misc/Nautos_74x16.png\" alt=\"Nautos\" width=\"74\" height=\"16\" /> 92710<br />\n      57mm Diameter Ball Bearing Ratchet Block With Hexagonal Faceted Aluminum Sheave</span>",
+          "description": "<p><span class=\"productName\"><img src=\"/misc/Nautos_74x16.png\" alt=\"Nautos\" width=\"74\" height=\"16\" /> 92710<br />\n      57mm Diameter Ball Bearing Ratchet Block With Hexagonal Faceted Aluminum Sheave</span>\n      </p>",
           "price": "$62 + Shipping",
           "link": "",
           "contactUrl": "/contact/"
@@ -33,7 +33,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "",
-          "description": "<span class=\"productName\"><img src=\"/misc/Nautos_74x16.png\" alt=\"Nautos\" width=\"74\" height=\"16\" /> HT 2260<br />\n      57mm Diameter Ball Bearing Autoratchet load-sensing ratchet block that rolls freely in both directions under \n      low loads, and automatically engages the ratchet as loads increase.</span>",
+          "description": "<p><span class=\"productName\"><img src=\"/misc/Nautos_74x16.png\" alt=\"Nautos\" width=\"74\" height=\"16\" /> HT 2260<br />\n      57mm Diameter Ball Bearing Autoratchet load-sensing ratchet block that rolls freely in both directions under \n      low loads, and automatically engages the ratchet as loads increase.</span>\n      </p>",
           "price": "$49 + Shipping",
           "link": "",
           "contactUrl": "/contact/"
@@ -44,7 +44,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "",
-          "description": "<span class=\"productName\"><img src=\"/misc/Nautos_74x16.png\" alt=\"Nautos\" width=\"74\" height=\"16\" /> 92609<br />\n      75mm Diameter Ball Bearing Ratchet Block With Hexagonal Faceted Aluminum Sheave</span>",
+          "description": "<p><span class=\"productName\"><img src=\"/misc/Nautos_74x16.png\" alt=\"Nautos\" width=\"74\" height=\"16\" /> 92609<br />\n      75mm Diameter Ball Bearing Ratchet Block With Hexagonal Faceted Aluminum Sheave</span>\n      </p>",
           "price": "$89 + Shipping",
           "link": "",
           "contactUrl": "/contact/"

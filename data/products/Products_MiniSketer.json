@@ -7,13 +7,13 @@
       "products": [
         {
           "type": "simple",
-          "image": "products/JEmainsheet_side_100.jpg",
+          "image": "/products/JEmainsheet_side_100.jpg",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "Mini-Skeeter Mainsheet Blocks",
-          "description": "<span class=\"productName\">Mini-Skeeter Mainsheet Blocks</span><br />\n      This is the mainsheet block configuration John designed for his Mini-Skeeter.<br />\n      It consists of seven 40mm Viadana blocks (p/n 11.82) for the purchase and a 57mm ratchet-block (p/n 14.10) at the mast.<br />\n      <a href=\"MiniSkeeterMainsheetBlocks.html\">Click here for more information and photos.</a>",
+          "description": "<p><span class=\"productName\">Mini-Skeeter Mainsheet Blocks</span><br />\n      This is the mainsheet block configuration John designed for his Mini-Skeeter.<br />\n      It consists of seven 40mm Viadana blocks (p/n 11.82) for the purchase and a 57mm ratchet-block (p/n 14.10) at the mast.<br />\n      <a href=\"/MiniSkeeterMainsheetBlocks.html\">Click here for more information and photos.</a></p>",
           "price": "$130 + Shipping",
-          "link": "MiniSkeeterMainsheetBlocks.html",
+          "link": "/MiniSkeeterMainsheetBlocks.html",
           "contactUrl": "/contact/"
         }
       ]
@@ -27,7 +27,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "",
-          "description": "We can assemble a custom mainsheet system using any blocks you want.",
+          "description": "<p>We can assemble a custom mainsheet system using any blocks you want.</p>",
           "price": "",
           "link": "",
           "contactUrl": "/contact/"

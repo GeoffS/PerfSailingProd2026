@@ -7,33 +7,33 @@
       "products": [
         {
           "type": "simple",
-          "image": "parts/HT2020.png",
+          "image": "/parts/HT2020.png",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "20mm Dynamic Single Ball-Bearing Block",
-          "description": "HT2020 - <span class=\"productName\">20mm Dynamic Single Ball-Bearing Block</span>",
+          "description": "<p>HT2020 - <span class=\"productName\">20mm Dynamic Single Ball-Bearing Block</span></p>",
           "price": "",
           "link": "",
           "contactUrl": "/contact/"
         },
         {
           "type": "simple",
-          "image": "parts/HT2024.png",
+          "image": "/parts/HT2024.png",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "20mm Dynamic Triple Ball-Bearing Block",
-          "description": "HT2024 - <span class=\"productName\">20mm Dynamic Triple Ball-Bearing Block</span>",
+          "description": "<p>HT2024 - <span class=\"productName\">20mm Dynamic Triple Ball-Bearing Block</span></p>",
           "price": "",
           "link": "",
           "contactUrl": "/contact/"
         },
         {
           "type": "simple",
-          "image": "parts/HT2025.png",
+          "image": "/parts/HT2025.png",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "20mm Dynamic Triple Ball-Bearing Block with becket",
-          "description": "HT2025 - <span class=\"productName\">20mm Dynamic Triple Ball-Bearing Block with becket</span>",
+          "description": "<p>HT2025 - <span class=\"productName\">20mm Dynamic Triple Ball-Bearing Block with becket</span></p>",
           "price": "",
           "link": "",
           "contactUrl": "/contact/"
@@ -45,11 +45,11 @@
       "products": [
         {
           "type": "simple",
-          "image": "parts/91026.png",
+          "image": "/parts/91026.png",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "Micro Composite Cam-Cleat",
-          "description": "91026 - <span class=\"productName\">Micro Composite Cam-Cleat</span>",
+          "description": "<p>91026 - <span class=\"productName\">Micro Composite Cam-Cleat</span></p>",
           "price": "",
           "link": "",
           "contactUrl": "/contact/"

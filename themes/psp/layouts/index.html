@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="span-20 last">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  
+  <div class="index-sections">
+    <h2>Products</h2>
+    <ul>
+      {{ range where (where site.Pages "Section" "products") "Kind" "section" }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    
+    <h2>Parts</h2>
+    <ul>
+      {{ range where (where site.Pages "Section" "parts") "Kind" "section" }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

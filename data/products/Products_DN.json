@@ -7,24 +7,24 @@
       "products": [
         {
           "type": "simple",
-          "image": "products/ChainStitch_tn.jpg",
+          "image": "/products/ChainStitch_tn.jpg",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "DN Chain-Stich Tapered Mainsheet",
-          "description": "The <span class=\"productName\">DN Chain-Stich Tapered Mainsheet</span> is the classic tapered mainsheet constructed from 3/16\" line with the center-section chain-stiched to\n      increase grip in the sailor's hand and around the ratchet block.<br />\n      <a href=\"StaSetChainstitchMainsheet.html\">Click here for more information and photos.</a>",
+          "description": "<p>The <span class=\"productName\">DN Chain-Stich Tapered Mainsheet</span> is the classic tapered mainsheet constructed from 3/16\" line with the center-section chain-stiched to\n      increase grip in the sailor's hand and around the ratchet block.<br />\n      <a href=\"/StaSetChainstitchMainsheet.html\">Click here for more information and photos.</a></p>",
           "price": "$55 + Shipping",
-          "link": "StaSetChainstitchMainsheet.html",
+          "link": "/StaSetChainstitchMainsheet.html",
           "contactUrl": "/contact/"
         },
         {
           "type": "simple",
-          "image": "products/PSP501_tn.jpg",
+          "image": "/products/PSP501_tn.jpg",
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "Tool-Free Hound Hardware",
-          "description": "<span class=\"productName\">Tool-Free Hound Hardware</span>. Aircraft hardware to securely attach a <i>Struble Hound</i> to your mast.<br />\n      <a href=\"PSP501.html\">Click here for more information and photos.</a>",
+          "description": "<p><span class=\"productName\">Tool-Free Hound Hardware</span>. Aircraft hardware to securely attach a <i>Struble Hound</i> to your mast.<br />\n      <a href=\"/PSP501.html\">Click here for more information and photos.</a></p>",
           "price": "$6.50 + Shipping",
-          "link": "PSP501.html",
+          "link": "/PSP501.html",
           "contactUrl": "/contact/"
         },
         {
@@ -33,7 +33,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "DN Iceboat Tiller",
-          "description": "COMING SOON!<br />\n      <span class=\"productName\">DN Iceboat Tiller</span>. A standard <i>Gougeon Style</i> tiller made from 3mm baltic-birch\n      plywood epoxied to a foam core with fiberglass reinforcement.",
+          "description": "<p>COMING SOON!<br />\n      <span class=\"productName\">DN Iceboat Tiller</span>. A standard <i>Gougeon Style</i> tiller made from 3mm baltic-birch\n      plywood epoxied to a foam core with fiberglass reinforcement.</p>",
           "price": "$250 + Shipping",
           "link": "",
           "contactUrl": "/contact/"
@@ -49,7 +49,7 @@
           "imageWidth": "100",
           "imageHeight": "100",
           "name": "",
-          "description": "We can make a custom <i>Gougeon Style</i> tiller made from 3mm baltic-birch plywood, fiberglass, carbon fiber, or some other material\n      epoxied to a foam core with a length and profile you specify.",
+          "description": "<p>We can make a custom <i>Gougeon Style</i> tiller made from 3mm baltic-birch plywood, fiberglass, carbon fiber, or some other material\n      epoxied to a foam core with a length and profile you specify.</p>",
           "price": "",
           "link": "",
           "contactUrl": "/contact/"
