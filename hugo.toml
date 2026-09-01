@@ -1,7 +1,15 @@
 baseURL = "/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Performance Sailing Products"
 theme = "psp"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[markup.goldmark.renderer]
+  unsafe = true
 
 [params]
   description = "Performance Sailing Products - Custom sailing equipment and parts"

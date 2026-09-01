@@ -10,7 +10,7 @@ sections:
     items:
       - type: simple
         name: "Clamp with Ball-Head"
-        description: "<p>The <span class=\"productName\">Clamp with Ball-Head</span> allows mounting a camera using the standard GoPro mounting hardware to a tube.<br />       <a href=\"/PSP600.html\">Click here for more information and photos.</a></p>"
+        description: "<p>The <span class=\"productName\">Clamp with Ball-Head</span> allows mounting a camera using the standard GoPro mounting hardware to a tube.<br />\n       <a href=\"/detail/psp600/\">Click here for more information and photos.</a></p>"
         image: "/products/PSP600_100.jpg"
         price: "$30 + Shipping"
       - type: simple

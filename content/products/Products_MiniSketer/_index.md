@@ -11,7 +11,7 @@ sections:
     items:
       - type: simple
         name: "Mini-Skeeter Mainsheet Blocks"
-        description: "<p><span class=\"productName\">Mini-Skeeter Mainsheet Blocks</span><br />       This is the mainsheet block configuration John designed for his Mini-Skeeter.<br />       It consists of seven 40mm Viadana blocks (p/n 11.82) for the purchase and a 57mm ratchet-block (p/n 14.10) at the mast.<br />       <a href=\"/MiniSkeeterMainsheetBlocks.html\">Click here for more information and photos.</a></p>"
+        description: "<p><span class=\"productName\">Mini-Skeeter Mainsheet Blocks</span><br />\n       This is the mainsheet block configuration John designed for his Mini-Skeeter.<br />\n       It consists of seven 40mm Viadana blocks (p/n 11.82) for the purchase and a 57mm ratchet-block (p/n 14.10) at the mast.<br />\n       <a href=\"/detail/miniskeetermainsheetblocks/\">Click here for more information and photos.</a></p>"
         image: "/products/JEmainsheet_side_100.jpg"
         price: "$130 + Shipping"
   - heading: "Custom Products:"

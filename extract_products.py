@@ -107,10 +107,41 @@ class ProductExtractor:
         return path
     
     def normalize_html_links(self, html: str) -> str:
-        """Normalize relative href and src attributes in HTML to absolute paths"""
+        """Normalize relative href and src attributes in HTML to absolute paths and convert detail page links"""
+        # Mapping of old detail page HTML filenames to new detail page URLs
+        detail_page_mapping = {
+            '19mmCCMount.html': '/detail/19mmccmount/',
+            '22mmCCMount.html': '/detail/22mmccmount/',
+            '22mmCCMountProtoype.html': '/detail/22mmccmountprotoype/',
+            '22mmStdCCMountProtoype.html': '/detail/22mmstdccmountprotoype/',
+            '5.5sqmMainsailRigging.html': '/detail/5.5sqmmainsailrigging/',
+            'CascadeControlSystems.html': '/detail/cascadecontrolsystems/',
+            'DN_ChainstitchMainsheets.html': '/detail/dn_chainstitchmainsheets/',
+            'HiTechChainstitchMainsheetPrototype.html': '/detail/hitechchainstitchmainsheetprototype/',
+            'IceSafetyPicks.html': '/detail/icesafetypicks/',
+            'MiniSkeeterMainsheetBlocks.html': '/detail/miniskeetermainsheetblocks/',
+            'PSP010.html': '/detail/psp010/',
+            'PSP011.html': '/detail/psp011/',
+            'PSP012.html': '/detail/psp012/',
+            'PSP501.html': '/detail/psp501/',
+            'PSP600.html': '/detail/psp600/',
+            'StaSetChainstitchMainsheet.html': '/detail/stasetchainstitchmainsheet/'
+        }
+        
         # Normalize href attributes
         def normalize_href(match):
             href = match.group(1)
+            if not href:
+                return f'href="{href}"'
+            
+            # Check if this is a detail page link that needs mapping
+            for old_url, new_url in detail_page_mapping.items():
+                if old_url in href:
+                    # Replace old filename with new detail page URL
+                    href = href.replace(old_url, new_url)
+                    return f'href="{href}"'
+            
+            # Standard path normalization for other links
             if href and not href.startswith('/') and not href.startswith('http'):
                 href = '/' + href
             return f'href="{href}"'

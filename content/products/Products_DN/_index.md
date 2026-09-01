@@ -10,12 +10,12 @@ sections:
     items:
       - type: simple
         name: "DN Chain-Stich Tapered Mainsheet"
-        description: "<p>The <span class=\"productName\">DN Chain-Stich Tapered Mainsheet</span> is the classic tapered mainsheet constructed from 3/16\" line with the center-section chain-stiched to       increase grip in the sailor's hand and around the ratchet block.<br />       <a href=\"/StaSetChainstitchMainsheet.html\">Click here for more information and photos.</a></p>"
+        description: "<p>The <span class=\"productName\">DN Chain-Stich Tapered Mainsheet</span> is the classic tapered mainsheet constructed from 3/16\" line with the center-section chain-stiched to\n       increase grip in the sailor's hand and around the ratchet block.<br />\n       <a href=\"/detail/stasetchainstitchmainsheet/\">Click here for more information and photos.</a></p>"
         image: "/products/ChainStitch_tn.jpg"
         price: "$55 + Shipping"
       - type: simple
         name: "Tool-Free Hound Hardware"
-        description: "<p><span class=\"productName\">Tool-Free Hound Hardware</span>. Aircraft hardware to securely attach a <i>Struble Hound</i> to your mast.<br />       <a href=\"/PSP501.html\">Click here for more information and photos.</a></p>"
+        description: "<p><span class=\"productName\">Tool-Free Hound Hardware</span>. Aircraft hardware to securely attach a <i>Struble Hound</i> to your mast.<br />\n       <a href=\"/detail/psp501/\">Click here for more information and photos.</a></p>"
         image: "/products/PSP501_tn.jpg"
         price: "$6.50 + Shipping"
       - type: simple

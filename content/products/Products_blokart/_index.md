@@ -9,27 +9,27 @@ sections:
     count: 6
     items:
       - type: simple
-        description: "<p>The <span class=\"productName\">Micro Cam-Cleat Mount for blokart<sup class=\"reg\">®</sup> diagonal tube</span> allows mounting a micro-sized cam-cleat       (fastener spacing 27mm or 1 1/6\") to the diagonal side tube on a blokart<sup class=\"reg\">®</sup> landsailer (or any other 3/4\" 19mm tube)<br />       (Note: the cam-cleat is not included).<br />       <a href=\"/19mmCCMount.html\">Click here for more information and photos.</a></p>"
+        description: "<p>The <span class=\"productName\">Micro Cam-Cleat Mount for blokart<sup class=\"reg\">®</sup> diagonal tube</span> allows mounting a micro-sized cam-cleat\n       (fastener spacing 27mm or 1 1/6\\\"\" to the diagonal side tube on a blokart<sup class=\"reg\">®</sup> landsailer (or any other 3/4\" 19mm tube)<br />\n       (Note: the cam-cleat is not included).<br />\n       <a href=\"/detail/19mmccmount/\">Click here for more information and photos.</a></p>"
         image: "/products/IMG_7482_100.jpg"
         price: "$35 + Shipping"
       - type: simple
         name: "Micro Cam-Cleat Mount for blokart® steering tube"
-        description: "<p><span class=\"productName\">Micro Cam-Cleat Mount for blokart® steering tube</span> allows mounting a micro-sized cam-cleat       (fastener spacing 27mm or 1 1/6\") to the steering tube on a blokart<sup class=\"reg\">®</sup> landsailer (or any other 7/8\" 22mm tube)<br />       <a href=\"/22mmCCMount.html\">Click here for more information and photos.</a></p>"
+        description: "<p><span class=\"productName\">Micro Cam-Cleat Mount for blokart® steering tube</span> allows mounting a micro-sized cam-cleat\n       (fastener spacing 27mm or 1 1/6\\\"\" to the steering tube on a blokart<sup class=\"reg\">®</sup> landsailer (or any other 7/8\" 22mm tube)<br />\n       <a href=\"/detail/22mmccmount/\">Click here for more information and photos.</a></p>"
         image: "/products/IMG_7200_100.jpg"
         price: "$45 + Shipping"
       - type: simple
         name: "Budget 6:1 Down-Haul with Integral Cleat"
-        description: "<p><span class=\"productName\">Budget 6:1 Down-Haul with Integral Cleat</span><br />       I put together this package as the lowest cost, easiest way to put a low-friction, 6:1 	  performance-class downhaul on your blokart<sup class=\"reg\">®</sup>.<br />       <a href=\"/PSP010.html\">Click here for more information and photos.</a></p>"
+        description: "<p><span class=\"productName\">Budget 6:1 Down-Haul with Integral Cleat</span><br />\n       I put together this package as the lowest cost, easiest way to put a low-friction, 6:1\t  performance-class downhaul on your blokart<sup class=\"reg\">®</sup>.<br />\n       <a href=\"/detail/psp010/\">Click here for more information and photos.</a></p>"
         image: "/products/PSP010_100.jpg"
         price: "$115 + Shipping"
       - type: simple
         name: "Budget 6:1 Down-Haul with Side-Tube Cleat"
-        description: "<p><span class=\"productName\">Budget 6:1 Down-Haul with Side-Tube Cleat</span><br />       This is very similar to the <b>Budget 6:1 Down-Haul with Integral Cleat</b>, but it mounts the cam-cleat       on the side-tube for more convenient adjustment.<br />       <a href=\"/PSP011.html\">Click here for more information and photos.</a></p>"
+        description: "<p><span class=\"productName\">Budget 6:1 Down-Haul with Side-Tube Cleat</span><br />\n       This is very similar to the <b>Budget 6:1 Down-Haul with Integral Cleat</b>, but it mounts the cam-cleat\n       on the side-tube for more convenient adjustment.<br />\n       <a href=\"/detail/psp011/\">Click here for more information and photos.</a></p>"
         image: "/products/PSP011_100.jpg"
         price: "$140 + Shipping"
       - type: simple
         name: "Production Dowhaul Upgrade Kit"
-        description: "<p><span class=\"productName\">Production Dowhaul Upgrade Kit</span><br />       The latest IBRA rules update will allow the use of a double-block in place of the ring at the bottom of       downhaul in the Production Class.<br />       This kit includes a double-block and new line. All you need to do is follow the simple instructions       to re-rig your downhaul using the original hook-fitting at the sail.<br />       <a href=\"/PSP012.html\">Click here for more information and photos.</a></p>"
+        description: "<p><span class=\"productName\">Production Dowhaul Upgrade Kit</span><br />\n       The latest IBRA rules update will allow the use of a double-block in place of the ring at the bottom of\n       downhaul in the Production Class.<br />\n       This kit includes a double-block and new line. All you need to do is follow the simple instructions\n       to re-rig your downhaul using the original hook-fitting at the sail.<br />\n       <a href=\"/detail/psp012/\">Click here for more information and photos.</a></p>"
         image: "/products/PSP012_100.jpg"
         price: "$35 + Shipping"
       - type: simple
