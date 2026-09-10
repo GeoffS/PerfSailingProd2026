@@ -29,13 +29,11 @@ sections:
         image: "/parts/91026.png"
 ---
 
-### Blocks:
-
-- **20mm Dynamic Single Ball-Bearing Block**
-- **20mm Dynamic Triple Ball-Bearing Block**
-- **20mm Dynamic Triple Ball-Bearing Block with becket**
-
-
-### Other Parts:
-
-- **Micro Composite Cam-Cleat**
+<div class="span-20 clear partsHeading"><img src="/misc/Nautos-usa_215x62.png" width="215" height="62" /></div>
+   <hr class="sectionSeparator" />
+   <p>We don't generally stock a large selection of <a href="http://nautos-usa.com/">Nautos</a> parts, but we can usually 
+   special-order anything from <a href="http://www.nautos.com.br/Nautica/">their catalog</a> and get it in a week.</p>
+   <p><a href="Contact.html">Contact us</a> for pricing on special-orders. We can often offer a substantial discount.</p>
+   <p>Another good source for small parts orders is <a href="http://nautos-usa.com/">Nautos-usa</a>. They stock most of 
+   the Nautos line and offer good prices with excellent customer service.</p>
+   <hr class="sectionSeparator" />

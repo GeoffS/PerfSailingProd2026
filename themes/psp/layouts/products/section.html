@@ -1,11 +1,19 @@
 {{ define "main" }}
   <div class="product">
+    {{ if .Content }}
+      {{ .Content }}
+    {{ end }}
+
     {{ if .Params.sections }}
-      {{ range .Params.sections }}
-        <div class="span-20 clear productSubHeading">{{ .heading }}</div>
+      {{ range $index, $section := .Params.sections }}
+        {{ if gt $index 0 }}
+          <div class="span-20 clear"><hr class="sectionSeparator" /></div>
+        {{ end }}
+
+        <div class="span-20 clear {{ if eq $.Section "parts" }}partsSubHeading{{ else }}productSubHeading{{ end }}">{{ $section.heading }}</div>
         <hr class="sectionSeparator" />
-        
-        {{ range .items }}
+
+        {{ range $section.items }}
           {{ if eq .type "simple" }}
             <hr class="product" />
             <div class="span-1 clear spacer">.</div>

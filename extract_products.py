@@ -35,6 +35,39 @@ class ProductExtractor:
         
         return ""
     
+    def extract_intro_content(self) -> str:
+        """Extract the original intro block that appears before the first product group or section heading."""
+        heading_patterns = [
+            r'<div[^>]*class="[^"]*productHeading[^"]*"[^>]*>(.*?)</div>',
+            r'<div[^>]*class="[^"]*partsHeading[^"]*"[^>]*>(.*?)</div>'
+        ]
+
+        for pattern in heading_patterns:
+            heading_match = re.search(pattern, self.html, re.DOTALL)
+            if not heading_match:
+                continue
+
+            start_idx = heading_match.start()
+            trailing_html = self.html[heading_match.end():]
+
+            # Find the earliest content boundary after the heading: either the first
+            # product/parts sub-heading or the first product separator.
+            subheading_match = re.search(r'<div[^>]*class="[^"]*(?:product|parts)SubHeading[^"]*"[^>]*>', trailing_html, re.DOTALL)
+            product_start_match = re.search(r'<hr class="(?:product|parts)"\s*/?>', trailing_html, re.DOTALL)
+
+            boundary_start = None
+            if subheading_match:
+                boundary_start = subheading_match.start()
+            if product_start_match and (boundary_start is None or product_start_match.start() < boundary_start):
+                boundary_start = product_start_match.start()
+
+            if boundary_start is not None:
+                end_idx = heading_match.end() + boundary_start
+                intro_html = self.html[start_idx:end_idx]
+                return intro_html.strip()
+
+        return ""
+
     def extract_sections(self) -> List[Dict]:
         """Extract sections between sectionSeparators with their sub-headings"""
         sections = []
@@ -162,23 +195,34 @@ class ProductExtractor:
         """Parse a descriptive entry block (tables, complex content)"""
         # Normalize relative links and image paths to absolute paths
         normalized_html = self.normalize_html_links(block_html)
-        
+
+        # Extract only the descriptive HTML block, stopping before the next section separator.
+        start_match = re.search(r'<div class="span-20[^>]*parts[^>]*>', normalized_html)
+        content_html = ""
+        if start_match:
+            content_start = normalized_html[start_match.start():]
+            clear_match = re.search(r'<div class="span-20 clear">', content_start)
+            if clear_match:
+                content_html = content_start[:clear_match.start()].strip()
+            else:
+                content_html = content_start.strip()
+
         product = {
             'type': 'descriptive',
             'heading': '',
-            'content': normalized_html.strip(),
+            'content': content_html,
             'image': '',
             'imageWidth': '',
             'imageHeight': ''
         }
-        
+
         # Try to extract an image from the descriptive block
         img_match = re.search(r'<img[^>]*src="([^"]*)"[^>]*width="(\d+)"[^>]*height="(\d+)"', normalized_html)
         if img_match:
             product['image'] = img_match.group(1)
             product['imageWidth'] = img_match.group(2)
             product['imageHeight'] = img_match.group(3)
-        
+
         return product
     
     def parse_product_block(self, block_html: str) -> Dict:
@@ -237,7 +281,7 @@ class ProductExtractor:
         
         return product if (product['name'] or product['description']) else None
 
-def generate_hugo_content(file_name: str, title: str, main_heading: str, sections: List[Dict]) -> str:
+def generate_hugo_content(file_name: str, title: str, main_heading: str, sections: List[Dict], intro_content: str = "") -> str:
     """Generate Hugo markdown content from extracted data using front matter for structured data"""
     
     # Clean up title
@@ -270,6 +314,10 @@ def generate_hugo_content(file_name: str, title: str, main_heading: str, section
                 # Store full description, properly escaped for YAML
                 desc = product['description'].replace('\\', '\\\\').replace('"', '\\"').replace('\n', ' ')
                 front_matter_lines.append(f'        description: "{desc}"')
+            if product.get('content'):
+                front_matter_lines.append('        content: |')
+                for line in product['content'].splitlines():
+                    front_matter_lines.append(f'          {line}')
             if product.get('image'):
                 front_matter_lines.append(f'        image: "{product["image"]}"')
             if product.get('price'):
@@ -279,28 +327,12 @@ def generate_hugo_content(file_name: str, title: str, main_heading: str, section
     front_matter_lines.append("---")
     front_matter = '\n'.join(front_matter_lines)
     
-    # Build markdown content with sections
+    # Build markdown content with intro HTML preserved from the original source page
     content_lines = [front_matter]
-    
-    if main_heading:
-        content_lines.append(f"\n## {main_heading}\n")
-    
-    for section in sections:
-        content_lines.append(f"\n### {section['sub_heading']}\n")
-        
-        for product in section['products']:
-            if product.get('type') == 'descriptive':
-                # For descriptive entries (tables, etc), note that the raw content is available
-                content_lines.append("**Detailed Entry** (Table/Complex Content)\n")
-            else:
-                # Simple product entry summary
-                if product.get('name'):
-                    content_lines.append(f"- **{product['name']}**")
-                if product.get('price'):
-                    content_lines.append(f"  - Price: {product['price']}")
-        
-        content_lines.append("")
-    
+
+    if intro_content.strip():
+        content_lines.append("\n" + intro_content.strip() + "\n")
+
     return '\n'.join(content_lines)
 
 
@@ -312,6 +344,7 @@ def convert_html_file(input_file: str, output_dir: str, data_dir: str) -> None:
     
     extractor = ProductExtractor(html_content)
     main_heading = extractor.extract_main_heading()
+    intro_content = extractor.extract_intro_content()
     sections = extractor.extract_sections()
     
     # Generate output filename
@@ -319,7 +352,7 @@ def convert_html_file(input_file: str, output_dir: str, data_dir: str) -> None:
     output_file = os.path.join(output_dir, f"_index.md")
     
     # Generate content
-    content = generate_hugo_content(base_name, base_name.replace('_', ' '), main_heading, sections)
+    content = generate_hugo_content(base_name, base_name.replace('_', ' '), main_heading, sections, intro_content)
     
     # Create output directory if needed
     os.makedirs(output_dir, exist_ok=True)

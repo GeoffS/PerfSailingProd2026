@@ -26,12 +26,26 @@ sections:
         price: "$89 + Shipping"
 ---
 
-## Ratchet Blocks:
-
-
-### Products
-
-  - Price: $65 + Shipping
-  - Price: $62 + Shipping
-  - Price: $49 + Shipping
-  - Price: $89 + Shipping
+<div class="span-20 clear productHeading">Ratchet Blocks:</div>
+   <hr class="sectionSeparator" />
+   
+   <p style="margin-top:5px; margin-left:20px;">
+      Ratchet blocks are indespensible for reducing the force required to hold a highly loaded line.<br />
+      I always use one in my blokart<sup class="reg">®</sup> and DN iceboat mainsheet systems.
+   </p>
+   <p style="margin-top:5px; margin-left:20px;">
+      I've used all three of the ratchet blocks listed below for a number of years.
+   </p>
+   <p style="margin-top:5px; margin-left:20px;">
+      Both the <b>Viadana 14.10</b>, <b>Nautos 92710</b>, and <b>Nautos HT 2260</b> 57mm ratchets work great on the blokart<sup class="reg">®</sup>.<br />
+      The difference is the Viadana uses a slotted sheave while both Nautos blocks have a faceted sheave.<br />
+      Both designs work well on the typical blokart<sup class="reg">®</sup> mainsheet diameters.
+   </p>
+   <p style="margin-top:5px; margin-left:20px;">
+      The <b>Nautos 92609</b> 75mm ratchet is perfect for the higher sheet loads found on the DN.<br />
+      I've had one on my boat for the past few years and it hasn't given me any trouble.
+   </p>
+   
+   
+   
+   <div class="span-1 clear spacer">.</div>
