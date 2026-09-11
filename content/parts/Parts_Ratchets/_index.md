@@ -4,6 +4,9 @@ description: "Ratchet Blocks:"
 date: 2026-08-30
 draft: false
 type: products
+url: "/parts/ratchets/"
+aliases:
+  - "/parts/parts_ratchets/"
 sections:
   - heading: "Products"
     count: 4

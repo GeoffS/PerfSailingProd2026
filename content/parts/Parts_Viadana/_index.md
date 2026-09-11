@@ -4,6 +4,9 @@ description: ""
 date: 2026-08-30
 draft: false
 type: products
+url: "/parts/viadana/"
+aliases:
+  - "/parts/parts_viadana/"
 sections:
   - heading: "22mm Ball-Bearing Blocks:"
     count: 1

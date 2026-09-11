@@ -4,6 +4,9 @@ description: ""
 date: 2026-08-30
 draft: false
 type: products
+url: "/parts/nautos/"
+aliases:
+  - "/parts/parts_nautos/"
 sections:
   - heading: "Blocks:"
     count: 3

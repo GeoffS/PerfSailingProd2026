@@ -4,6 +4,9 @@ description: "Camera Mounts:"
 date: 2026-08-30
 draft: false
 type: products
+url: "/products/camera-mounts/"
+aliases:
+  - "/products/products_cammounts/"
 sections:
   - heading: "Standard Products:"
     count: 2

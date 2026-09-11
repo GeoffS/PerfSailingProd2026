@@ -4,6 +4,9 @@ description: "blokart® Landsailer Products:"
 date: 2026-08-30
 draft: false
 type: products
+url: "/products/blokart/"
+aliases:
+  - "/products/products_blokart/"
 sections:
   - heading: "Rigging and Controls:"
     count: 6

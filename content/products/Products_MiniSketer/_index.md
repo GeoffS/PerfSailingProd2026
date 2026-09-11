@@ -5,6 +5,9 @@ description: "
 date: 2026-08-30
 draft: false
 type: products
+url: "/products/mini-skeeter/"
+aliases:
+  - "/products/products_minisketer/"
 sections:
   - heading: "Standard Products:"
     count: 1

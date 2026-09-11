@@ -4,6 +4,9 @@ description: "DN Iceboat Products:"
 date: 2026-08-30
 draft: false
 type: products
+url: "/products/dn-iceboat/"
+aliases:
+  - "/products/products_dn/"
 sections:
   - heading: "Standard Products:"
     count: 3
