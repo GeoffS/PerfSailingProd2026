@@ -17,20 +17,28 @@
       {{ block "sidebar" . }}
         <div class="span-4">
           <div id="sidebarLinks" class="sidebarLinks">
-            <p class="sidebarLink"><a href="/" class="sidebar">Home</a></p>
+            <p class="sidebarLink"><a href="{{ .Site.BaseURL }}" class="sidebar">Home</a></p>
             <hr />
             <p class="sidebarLinkSection"><span class="sidebarLinkSection">Products:</span></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_dn/">DN Iceboat</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_blokart/">blokart<sup class="reg">®</sup></a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_minisketer/">Mini-Skeeter<br />Iceboat</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/products/products_cammounts/">Camera<br />Mounts</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/dn-iceboat/">DN Iceboat</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/blokart/">blokart<sup class="reg">®</sup></a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/mini-skeeter/">Mini-Skeeter<br />Iceboat</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/camera-mounts/">Camera<br />Mounts</a></p>
             <hr />
             <p class="sidebarLinkSection"><span class="sidebarLinkSection">Parts:</span></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/parts/parts_ratchets/">Ratchet Blocks</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/parts/parts_viadana/">Viadana</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="/parts/parts_nautos/">Nautos</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/ratchets/">Ratchet Blocks</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/viadana/">Viadana</a></p>
+            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/nautos/">Nautos</a></p>
             <hr />
-            <p class="sidebarLink"><a href="/contact/" class="sidebar">Contact Us</a></p>
+            <p class="sidebarLink"><a href="{{ .Site.BaseURL }}contact/" class="sidebar">Contact Us</a></p>
+          </div>
+
+          <div id="sidebar2Links" class="sidebarLinks" style="margin-top:30px;">
+            <p class="sidebarLinkSection"><span class="sidebarLinkSection">Projects:</span></p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/dn-composite-mainsheet/">DN Composite Mainsheet</a></p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/blokart-5.5m-mainsheet/">blokart<sup class="reg">®</sup> 5.5m<sup class="sqr">2</sup> Mainsheet</a></p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/blokart-mainsheet-cleat/">blokart<sup class="reg">®</sup> Mainsheet Cleat</a></p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/ice-safety-picks/">Ice Safety Picks</a></p>
           </div>
         </div>
       {{ end }}
