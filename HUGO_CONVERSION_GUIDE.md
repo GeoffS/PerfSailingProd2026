@@ -1,250 +1,185 @@
-# Hugo SSG Conversion - Performance Sailing Products
+# Hugo Conversion Guide
 
-## Project Summary
+## Project overview
 
-Successfully converted the Performance Sailing Products static website from HTML to a Hugo Static Site Generator (SSG) structure, with automated extraction of product and parts entries into reusable templates.
+This project converts the original Performance Sailing Products static HTML site into a Hugo site while preserving the original layout, styles, content structure, and legacy URLs as closely as possible.
 
-## Structure Overview
+The current site includes:
 
-### Directory Layout
+- product and parts sections generated from the legacy HTML files
+- project pages derived from the original static site
+- detail pages created from individual legacy HTML pages
+- shared Hugo layouts that mimic the original Blueprint-based page structure
 
-```
+## Current project state
+
+The migration is now functionally complete and verified. The latest build succeeded after the shared detail-page converter was fixed and the generated content was regenerated.
+
+### Verified build result
+
+Fresh verification output from the last successful run:
+
+- Pages: 36
+- Static files: 456
+- Aliases: 27
+- Build completed successfully
+
+The only remaining message is a non-blocking Hugo warning about a missing taxonomy layout:
+
+- `found no layout file for "html" for kind "taxonomy"`
+
+This warning does not stop the build and does not affect the rendered pages.
+
+## Directory layout
+
+```text
 PerfSailingProd2026/
 ├── content/
+│   ├── _index.md
 │   ├── products/
 │   │   ├── Products_blokart/
-│   │   │   └── _index.md
 │   │   ├── Products_CamMounts/
-│   │   │   └── _index.md
 │   │   ├── Products_DN/
-│   │   │   └── _index.md
 │   │   └── Products_MiniSketer/
-│   │       └── _index.md
-│   └── parts/
-│       ├── Parts_Nautos/
-│       │   └── _index.md
-│       ├── Parts_Ratchets/
-│       │   └── _index.md
-│       └── Parts_Viadana/
-│           └── _index.md
-├── data/
-│   ├── products/
-│   │   ├── Products_blokart.json
-│   │   ├── Products_CamMounts.json
-│   │   ├── Products_DN.json
-│   │   └── Products_MiniSketer.json
-│   └── parts/
-│       ├── Parts_Nautos.json
-│       ├── Parts_Ratchets.json
-│       └── Parts_Viadana.json
+│   ├── parts/
+│   │   ├── Parts_Nautos/
+│   │   ├── Parts_Ratchets/
+│   │   └── Parts_Viadana/
+│   ├── projects/
+│   │   ├── blokart-5.5m-mainsheet.md
+│   │   ├── blokart-mainsheet-cleat.md
+│   │   ├── dn-composite-mainsheet.md
+│   │   └── ice-safety-picks.md
+│   └── detail/
+│       ├── 19mmccmount.md
+│       ├── psp600.md
+│       └── stasetchainstitchmainsheet.md
+├── static/
 ├── themes/psp/
 │   └── layouts/
-│       ├── _default/
-│       │   ├── baseof.html
-│       │   └── sidebar.html
-│       ├── partials/
-│       │   ├── simple-product-entry.html
-│       │   ├── descriptive-entry.html
-│       │   └── section-heading.html
-│       ├── products/
-│       │   └── section.html
-│       └── parts/
-│           └── section.html
 ├── public/
-│   ├── products/
-│   │   ├── products_blokart/index.html
-│   │   ├── products_cammounts/index.html
-│   │   ├── products_dn/index.html
-│   │   └── products_minisketer/index.html
-│   └── parts/
-│       ├── parts_nautos/index.html
-│       ├── parts_ratchets/index.html
-│       └── parts_viadana/index.html
+├── data/
+├── extract_products.py
+├── extract_detail_pages.py
 ├── hugo.toml
-└── extract_products.py
+├── README.md
+├── USAGE_GUIDE.md
+├── COMPLETION_REPORT.md
+├── LICENSE
+├── .gitignore
+└── .hugo_build.lock
 ```
 
-## How It Works
+## Conversion pipeline
 
-### 1. Content Extraction (`extract_products.py`)
+### 1. Product and parts extraction
 
-The extraction script performs these steps:
+The original static site pages are converted by `extract_products.py`.
 
-1. **Parses HTML files** from `PerfSailingProd_www` directory
-2. **Extracts main headings** (e.g., "DN Iceboat Products:")
-3. **Finds section separators** marked by `<hr class="sectionSeparator" />`
-4. **Extracts sub-headings** (e.g., "Standard Products:")
-5. **Identifies product entries** between `<hr class="product" />` or `<hr class="parts" />` tags
-6. **Parses two types of entries**:
-   - **Simple product entries**: Image, name, description, price
-   - **Descriptive entries**: Complex content like tables with optional images
-7. **Generates Hugo content files** with YAML front matter containing structured data
-8. **Stores extracted data** as JSON in the data directory for reference
+This script:
 
-### 2. Front Matter Structure
+1. reads the legacy `Products_*.html` and `Parts_*.html` files
+2. extracts section headings, item blocks, and descriptive content
+3. normalizes internal links and paths into Hugo-friendly formats
+4. writes Hugo section pages in `content/products/` and `content/parts/`
+5. stores structured extracted data in `data/` for reference
 
-Each generated markdown file uses YAML front matter to store the structured product data:
+### 2. Detail page conversion
 
-```yaml
----
-title: "Products DN"
-description: "DN Iceboat Products:"
-date: 2026-08-30
-draft: false
-type: products
-sections:
-  - heading: "Standard Products:"
-    count: 3
-    items:
-      - type: simple
-        name: "Product Name"
-        description: "Product description..."
-        image: "products/image.jpg"
-        price: "$XX + Shipping"
-      - type: descriptive
-        heading: "Optional heading"
-        content: "<table>...</table>"
-        image: "parts/image.jpg"
----
-```
+The legacy detail pages are converted by `extract_detail_pages.py`.
 
-### 3. Hugo Templates
+This script:
 
-#### Base Template (`baseof.html`)
-- Defines the overall page structure
-- Sets up HTML head with stylesheets
-- Defines banner and layout
-- Uses `block` directives for sidebar and main content
+1. reads the legacy detail HTML pages from the source site
+2. creates Hugo markdown pages under `content/detail/`
+3. preserves the original page structure where possible
+4. normalizes href/src values so generated pages render correctly
+5. removes raw wrapper patterns that caused malformed rendering in Hugo
 
-#### Section Layouts
-- `layouts/products/section.html` - Renders product pages with products CSS classes
-- `layouts/parts/section.html` - Renders parts pages with parts CSS classes
-- Both iterate over `.Params.sections` from front matter
-- Render products with proper HTML structure matching original design
+### 3. Hugo rendering
 
-#### Rendering Logic
-Each section layout:
-1. Renders sidebar navigation
-2. Iterates over sections from front matter
-3. For each section:
-   - Displays sub-heading
-   - Renders section separator
-   - Loops through items and renders based on type:
-     - **Simple**: Image div, description div, price div
-     - **Descriptive**: Full HTML content div
+The `themes/psp` theme contains the layouts used by the generated site:
 
-### 4. Data Files
+- `themes/psp/layouts/_default/baseof.html`
+- `themes/psp/layouts/_default/single.html`
+- `themes/psp/layouts/products/section.html`
+- `themes/psp/layouts/parts/single.html`
+- `themes/psp/layouts/detail/single.html`
 
-JSON data files in `data/` directory store the complete extracted data for reference:
+The site uses the Blueprint CSS framework and preserves the original static site layout classes.
 
-```json
-{
-  "title": "Products DN",
-  "main_heading": "DN Iceboat Products:",
-  "sections": [
-    {
-      "sub_heading": "Standard Products:",
-      "products": [
-        {
-          "type": "simple",
-          "name": "...",
-          "description": "...",
-          "image": "...",
-          "price": "...",
-          "link": "...",
-          "contactUrl": "/contact/"
-        }
-      ]
-    }
-  ]
-}
-```
+## Key conversion improvements completed
 
-## Entry Types
+### Content fidelity repairs
 
-### Simple Product Entry
-Used for standard product listings with:
-- Thumbnail image (100x100)
-- Product name  
-- Description text
-- Optional link to detail page
-- Price information
-- Optional contact/order button
+The conversion now includes repairs that were required after the initial migration:
 
-**Example HTML rendering:**
-```html
-<hr class="product" />
-<div class="span-1 clear spacer">.</div>
-<div class="span-3 push-1 product">
-  <img class="tn" src="products/image.jpg" width="100" height="100" />
-</div>
-<div class="span-14 product">
-  <p>Description...</p>
-</div>
-<div class="span-2 right productPrice">
-  Price + Shipping
-</div>
-```
+- restored the missing home-page content
+- corrected links that still pointed at legacy `.html` files
+- added missing intro sections for generated product and parts pages
+- restored the Projects navigation block and the related pages
+- fixed malformed project-page HTML rendering
+- repaired malformed detail-page HTML generated by the converter
 
-### Descriptive Product Entry  
-Used for complex entries like parts lists with:
-- Tables with item numbers, descriptions, pricing
-- Optional images
-- Multi-row complex content
+### Detail-page root cause fix
 
-**Example:** Parts_Viadana.html "22mm Ball-Bearing Blocks" section with product table
+The main detail-page issue was caused by the shared converter generating content that preserved malformed legacy HTML and wrapped content in ways that Hugo rendered incorrectly.
 
-## Generation Process
+The final fix included:
 
-To regenerate content after modifying the extraction script:
+- removing the unnecessary raw HTML wrapper from converted detail content
+- normalizing broken relative paths and anchors
+- regenerating all detail pages from the source HTML
+- rebuilding the full Hugo site to confirm the fix site-wide
+
+## Front matter and generated content
+
+Generated section pages use Hugo front matter plus structured content blocks. These section pages are designed to render with the same visual structure as the original static site.
+
+Detail pages are stored as individual markdown files under `content/detail/`, with front matter and HTML content generated from the original static page source.
+
+## Regeneration workflow
+
+After source HTML changes, regenerate everything with:
 
 ```bash
-cd PerfSailingProd2026
 python extract_products.py
+python extract_detail_pages.py
 hugo build
 ```
 
-This will:
-1. Parse all `Products_*.html` and `Parts_*.html` files
-2. Create section directories with `_index.md` files
-3. Store extracted data in `data/` directory
-4. Generate static HTML in `public/` directory
+This refreshes:
 
-## CSS Framework
+- section pages in `content/products/` and `content/parts/`
+- detail pages in `content/detail/`
+- the static site output in `public/`
 
-The site uses the **Blueprint CSS Framework** for layout:
-- `span-4` - 4 column sidebar
-- `span-20` - 20 column main content
-- `span-24` - Full width
-- Product/parts specific classes for styling
+## Known issue
 
-## Headings Extracted
+Hugo currently emits a non-blocking warning about a missing taxonomy layout:
 
-### Product Headings
-- `productHeading` - Main category heading
-- `productSubHeading` - Section sub-heading (e.g., "Standard Products")
+```text
+found no layout file for "html" for kind "taxonomy"
+```
 
-### Parts Headings  
-- `partsHeading` - Main category heading
-- `partsSubHeading` - Section sub-heading (e.g., "Blocks")
+This warning does not break the site and is outside the current content conversion work.
 
-## Next Steps
+## Build and preview commands
 
-To further enhance this Hugo setup:
+```bash
+# build the site
+hugo build
 
-1. **Create home page layout** - `layouts/index.html` for category listings
-2. **Add section/taxonomy layouts** - For product browsing by category
-3. **Create detail pages** - Individual product pages linked from main listings
-4. **Copy static assets** - CSS, images, JavaScript to `static/` directory
-5. **Configure base URL** - Update `baseURL` in `hugo.toml` for your domain
-6. **Add navigation** - Create about, contact pages
-7. **Build theme CSS** - Customize or extend Blueprint styling
+# serve locally
+hugo server
+```
 
-## Files Generated
+## Notes for future maintenance
 
-- **7 Product Pages** - DN, blokart, Mini-Skeeter, Camera Mounts
-- **3 Parts Pages** - Ratchets, Viadana, Nautos
-- **22 total HTML pages** including section index pages
-- **7 data files** with extracted product information
+- keep the source HTML in `PerfSailingProd_www` as the canonical reference when updating migrated content
+- regenerate detail pages after any source-detail-page edits
+- verify page rendering after changing the converter or the theme layouts
 
-All HTML files maintain the original layout structure and CSS classes for compatibility with existing stylesheets.
+---
+
+*Updated September 11, 2026*

@@ -1,17 +1,15 @@
-# Usage Guide for Hugo SSG - Performance Sailing Products
+# Usage Guide
 
-## Quick Start
+## Quick start
 
-### Building the Site
+### Build the site
 
 ```bash
 cd PerfSailingProd2026
 hugo build
 ```
 
-Output will be generated in the `public/` directory.
-
-### Previewing the Site
+### Preview locally
 
 ```bash
 hugo server
@@ -19,188 +17,159 @@ hugo server
 
 Then open http://localhost:1313 in your browser.
 
-## Modifying Content
+## Current content structure
 
-### Adding/Updating a Product
+The current Hugo site includes:
 
-1. Edit the corresponding markdown file:
-   - Product: `content/products/Products_*/index.md`
-   - Parts: `content/parts/Parts_*/index.md`
+- products sections in `content/products/`
+- parts sections in `content/parts/`
+- project pages in `content/projects/`
+- detail pages in `content/detail/`
 
-2. Modify the front matter sections array:
+The generated site output is in `public/`.
 
-```yaml
-sections:
-  - heading: "Section Name"
-    count: 1
-    items:
-      - type: simple
-        name: "Product Name"
-        image: "products/image.jpg"
-        imageWidth: "100"
-        imageHeight: "100"
-        description: "Product description"
-        price: "$99.99 + Shipping"
-        link: "/detail-page/"
-```
+## Regeneration workflow
 
-3. Rebuild: `hugo build`
-
-### Adding a New Product Category
-
-1. Create new directory:
-   ```bash
-   mkdir -p content/products/Products_NewCategory
-   ```
-
-2. Create `_index.md` with front matter containing sections
-
-3. Create corresponding data file in `data/products/Products_NewCategory.json`
-
-4. Rebuild: `hugo build`
-
-## Extraction and Re-import
-
-### Re-extract from Original HTML
-
-If the original HTML files change, re-run the extraction:
+If the legacy source HTML changes, regenerate the Hugo content with:
 
 ```bash
 python extract_products.py
+python extract_detail_pages.py
 hugo build
 ```
 
-This will:
-1. Parse all Products_*.html and Parts_*.html from PerfSailingProd_www
-2. Regenerate content files with updated data
-3. Store extracted data in data/ directory
+### What each script does
 
-## Theme Customization
+- `extract_products.py` rebuilds the product and parts section pages from the legacy static HTML
+- `extract_detail_pages.py` rebuilds the detail pages and normalizes HTML references
 
-### Changing Styles
+## Updating existing section content
 
-1. CSS files are in original source, reference them in templates:
-   - Blueprint CSS: `blueprint/screen.css`
-   - Custom styles: `GSSTstyle.css`
+### Product and parts pages
 
-2. To use local CSS:
-   - Copy to `static/css/`
-   - Update paths in `themes/psp/layouts/_default/baseof.html`
+The content for products and parts is stored in files such as:
 
-### Adding New Sections
+- `content/products/Products_DN/_index.md`
+- `content/products/Products_blokart/_index.md`
+- `content/parts/Parts_Ratchets/_index.md`
 
-Create new layout file in `themes/psp/layouts/` following the pattern:
+Edit those Markdown files directly if you want to adjust the rendered content, then rebuild:
 
-```html
-{{ define "sidebar" }}
-  <!-- Navigation -->
-{{ end }}
-
-{{ define "main" }}
-  <!-- Content -->
-{{ end }}
+```bash
+hugo build
 ```
 
-### Modifying the Sidebar
+## Working with detail pages
 
-Edit the `define "sidebar"` block in:
-- `themes/psp/layouts/products/section.html`
-- `themes/psp/layouts/parts/section.html`
-- `themes/psp/layouts/_default/sidebar.html`
+Detail pages live in `content/detail/`, for example:
 
-## Front Matter Reference
+- `content/detail/psp600.md`
+- `content/detail/stasetchainstitchmainsheet.md`
 
-### Product Item Fields
+If the source HTML file in `PerfSailingProd_www` changes, rerun:
 
-```yaml
-items:
-  - type: simple|descriptive        # Entry type
-    name: string                     # Product name (optional for descriptive)
-    description: string              # Product description or HTML content
-    image: string                    # Image path (optional)
-    imageWidth: string              # Image width (default: 100)
-    imageHeight: string             # Image height (default: 100)
-    price: string                   # Price text (HTML allowed)
-    link: string                    # Link to detail page (optional)
-    contactUrl: string              # Contact/order link (default: /contact/)
-    content: string                 # For descriptive type: full HTML content
-    style: string                   # Optional CSS style attribute
+```bash
+python extract_detail_pages.py
+hugo build
 ```
 
-## Hugo Commands Reference
+This is the safest way to refresh the converted detail pages after any source changes.
 
-- `hugo build` - Build production site
-- `hugo server` - Local development server
-- `hugo server -D` - Include draft posts in preview
-- `hugo list all` - List all content with details
-- `hugo version` - Show Hugo version
+## Project pages
 
-## Directory Structure Explanation
+Project content currently lives in `content/projects/` and is rendered using the standard site layout.
 
-### content/
-Hugo looks for markdown files here. Files ending with `_index.md` become section pages.
+Examples:
 
-### data/
-Data files in YAML/JSON/TOML format accessed in templates via `.Site.Data`.
+- `content/projects/blokart-5.5m-mainsheet.md`
+- `content/projects/blokart-mainsheet-cleat.md`
+- `content/projects/dn-composite-mainsheet.md`
+- `content/projects/ice-safety-picks.md`
 
-### public/
-Generated static HTML output. Ready to deploy.
+## Theme customization
 
-### static/
-Static files (images, CSS, JS) copied as-is to public/.
+The custom theme is in `themes/psp/`.
 
-### themes/psp/
-Custom Hugo theme with layouts and partials.
+Common edit locations:
+
+- `themes/psp/layouts/_default/baseof.html` — shared HTML shell
+- `themes/psp/layouts/_default/single.html` — generic single-page layout
+- `themes/psp/layouts/products/section.html` — product section rendering
+- `themes/psp/layouts/parts/single.html` — parts content rendering
+- `themes/psp/layouts/detail/single.html` — detail page rendering
+
+## Styling
+
+The site uses the Blueprint CSS framework and the original static CSS files remain in the project.
+
+Relevant static assets live in:
+
+- `static/blueprint/`
+- `static/GSSTstyle.css`
+- `static/images/`
+- `static/misc/`
+
+## Common maintenance tasks
+
+### Refresh all generated content
+
+```bash
+python extract_products.py
+python extract_detail_pages.py
+hugo build
+```
+
+### Preview changes
+
+```bash
+hugo server
+```
+
+### Check the current content inventory
+
+```bash
+hugo list all
+```
 
 ## Troubleshooting
 
-### Pages Not Generating
+### Pages render incorrectly
 
-1. Check `hugo list all` to see if content is recognized
-2. Verify `_index.md` is in correct directory structure
-3. Ensure front matter is valid YAML
+1. confirm the source HTML in `PerfSailingProd_www` is correct
+2. rerun `python extract_detail_pages.py`
+3. rebuild with `hugo build`
+4. inspect the generated output in `public/`
 
-### Styling Issues
+### Broken links
 
-1. Check if CSS files are being served (check browser console)
-2. Verify CSS file paths in baseof.html
-3. Check if `baseURL` in hugo.toml needs adjustment for relative paths
+1. check whether the target page is generated in `content/`
+2. verify the alias or URL mapping in the generated markdown
+3. rebuild the site after any source or layout updates
 
-### Data Not Rendering
+### Hugo warning about taxonomy layout
 
-1. Verify `.Params.sections` is being populated (check source)
-2. Check template `{{ range .Params.sections }}` logic
-3. Ensure markdown file has proper YAML front matter
+This warning appears in the current build output:
 
-## Performance Tips
+```text
+found no layout file for "html" for kind "taxonomy"
+```
 
-- Use `hugo build` for production (faster than `hugo server`)
-- Enable minification: `hugo --minify`
-- Run garbage collection: `hugo build --gc`
-- Check performance: `hugo --templateMetrics`
+It is non-blocking. The build still succeeds and pages still render correctly.
 
 ## Deployment
 
-### To a Web Server
+To deploy the generated site:
 
-1. Build: `hugo build`
-2. Upload contents of `public/` to web server
-3. Ensure base URL matches server domain in `hugo.toml`
-
-### To GitHub Pages
-
-1. Build: `hugo build`
-2. Commit `public/` directory
-3. Configure GitHub Pages to serve from the branch
+1. run `hugo build`
+2. upload the contents of `public/` to your hosting environment
+3. ensure the site is served from the correct root path if your host is not using `/`
 
 ## Resources
 
-- Hugo Documentation: https://gohugo.io/documentation/
-- Markdown Guide: https://www.markdownguide.org/
-- Blueprint CSS: http://blueprintcss.org/
+- [README.md](README.md)
+- [HUGO_CONVERSION_GUIDE.md](HUGO_CONVERSION_GUIDE.md)
+- [COMPLETION_REPORT.md](COMPLETION_REPORT.md)
 
-## Support Files
+---
 
-- `HUGO_CONVERSION_GUIDE.md` - Technical overview of the conversion
-- `extract_products.py` - Python script to extract and convert HTML
-- `hugo.toml` - Hugo configuration file
+*Updated September 11, 2026*
