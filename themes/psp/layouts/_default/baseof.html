@@ -15,30 +15,109 @@
       </div>
       
       {{ block "sidebar" . }}
+        {{ $current := .RelPermalink }}
         <div class="span-4">
           <div id="sidebarLinks" class="sidebarLinks">
-            <p class="sidebarLink"><a href="{{ .Site.BaseURL }}" class="sidebar">Home</a></p>
+            <p class="sidebarLink">
+              {{ if eq $current "/" }}
+                <span class="sidebarLink">Home</span>
+              {{ else }}
+                <a href="{{ .Site.BaseURL }}" class="sidebar">Home</a>
+              {{ end }}
+            </p>
             <hr />
             <p class="sidebarLinkSection"><span class="sidebarLinkSection">Products:</span></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/dn-iceboat/">DN Iceboat</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/blokart/">blokart<sup class="reg">®</sup></a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/mini-skeeter/">Mini-Skeeter<br />Iceboat</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}products/camera-mounts/">Camera<br />Mounts</a></p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/products/dn-iceboat/" }}
+                <span class="sidebarLink">DN Iceboat</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}products/dn-iceboat/">DN Iceboat</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/products/blokart/" }}
+                <span class="sidebarLink">blokart<sup class="reg">®</sup></span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}products/blokart/">blokart<sup class="reg">®</sup></a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/products/mini-skeeter/" }}
+                <span class="sidebarLink">Mini-Skeeter<br />Iceboat</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}products/mini-skeeter/">Mini-Skeeter<br />Iceboat</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/products/camera-mounts/" }}
+                <span class="sidebarLink">Camera<br />Mounts</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}products/camera-mounts/">Camera<br />Mounts</a>
+              {{ end }}
+            </p>
             <hr />
             <p class="sidebarLinkSection"><span class="sidebarLinkSection">Parts:</span></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/ratchets/">Ratchet Blocks</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/viadana/">Viadana</a></p>
-            <p class="sidebarLinkIndent"><a class="sidebar" href="{{ .Site.BaseURL }}parts/nautos/">Nautos</a></p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/parts/ratchets/" }}
+                <span class="sidebarLink">Ratchet Blocks</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}parts/ratchets/">Ratchet Blocks</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/parts/viadana/" }}
+                <span class="sidebarLink">Viadana</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}parts/viadana/">Viadana</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent">
+              {{ if eq $current "/parts/nautos/" }}
+                <span class="sidebarLink">Nautos</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}parts/nautos/">Nautos</a>
+              {{ end }}
+            </p>
             <hr />
-            <p class="sidebarLink"><a href="{{ .Site.BaseURL }}contact/" class="sidebar">Contact Us</a></p>
+            <p class="sidebarLink">
+              {{ if eq $current "/contact/" }}
+                <span class="sidebarLink">Contact Us</span>
+              {{ else }}
+                <a href="{{ .Site.BaseURL }}contact/" class="sidebar">Contact Us</a>
+              {{ end }}
+            </p>
           </div>
 
           <div id="sidebar2Links" class="sidebarLinks" style="margin-top:30px;">
             <p class="sidebarLinkSection"><span class="sidebarLinkSection">Projects:</span></p>
-            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/dn-composite-mainsheet/">DN Composite Mainsheet</a></p>
-            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/blokart-5.5m-mainsheet/">blokart<sup class="reg">®</sup> 5.5m<sup class="sqr">2</sup> Mainsheet</a></p>
-            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/blokart-mainsheet-cleat/">blokart<sup class="reg">®</sup> Mainsheet Cleat</a></p>
-            <p class="sidebarLinkIndent" style="margin-top:5px;"><a class="sidebar" href="{{ .Site.BaseURL }}projects/ice-safety-picks/">Ice Safety Picks</a></p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;">
+              {{ if eq $current "/projects/dn-composite-mainsheet/" }}
+                <span class="sidebarLink">DN Composite Mainsheet</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}projects/dn-composite-mainsheet/">DN Composite Mainsheet</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;">
+              {{ if eq $current "/projects/blokart-5.5m-mainsheet/" }}
+                <span class="sidebarLink">blokart<sup class="reg">®</sup> 5.5m<sup class="sqr">2</sup> Mainsheet</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}projects/blokart-5.5m-mainsheet/">blokart<sup class="reg">®</sup> 5.5m<sup class="sqr">2</sup> Mainsheet</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;">
+              {{ if eq $current "/projects/blokart-mainsheet-cleat/" }}
+                <span class="sidebarLink">blokart<sup class="reg">®</sup> Mainsheet Cleat</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}projects/blokart-mainsheet-cleat/">blokart<sup class="reg">®</sup> Mainsheet Cleat</a>
+              {{ end }}
+            </p>
+            <p class="sidebarLinkIndent" style="margin-top:5px;">
+              {{ if eq $current "/projects/ice-safety-picks/" }}
+                <span class="sidebarLink">Ice Safety Picks</span>
+              {{ else }}
+                <a class="sidebar" href="{{ .Site.BaseURL }}projects/ice-safety-picks/">Ice Safety Picks</a>
+              {{ end }}
+            </p>
           </div>
         </div>
       {{ end }}
