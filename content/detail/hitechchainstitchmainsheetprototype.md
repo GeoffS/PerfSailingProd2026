@@ -7,7 +7,6 @@ aliases:
   - /HiTechChainstitchMainsheetPrototype.html
 ---
 
-{% raw %}
 <div class="h1">Prototype Chainstitch Mainsheet:</div>
 	<div class="h2">Last Update: June 10, 2014 - First photos of protoype #1</div>
 	<hr />
@@ -29,6 +28,5 @@ aliases:
 	<p class="img650">
 		I've included a section of the more typical mainsheet constructed from 3/16" double-braid for a size comparison.
 	</p>
-	<div class="img650"><img src="/misc/IMG_5435_650.jpg width="650" height="276" /></div>
-	<div class="img650"><img src="/misc/IMG_5425_650.jpg width="650" height="650" /></div>
-{% endraw %}
+	<div class="img650"><img src="/misc/IMG_5435_650.jpg" width="650" height="276" /></div>
+	<div class="img650"><img src="/misc/IMG_5425_650.jpg" width="650" height="650" /></div>

@@ -7,7 +7,6 @@ aliases:
   - /CascadeControlSystems.html
 ---
 
-{% raw %}
 <h1>Cascade Purchases</h1>
 <p class="normal">We're a big fan of cascade purchase systems over the more conventional multi-part block and tackles. We'll try and explain their advantages and disadvantages here.</p>
 <hr />
@@ -16,8 +15,8 @@ aliases:
 	The cascade uses four single blocks and two pieces of line.</p>
 <p class="normal">
 	<span style="float:left; margin-right:5px;">
-		<a href="/images/TripleBlocks_lg.png><img src="/images/TripleBlocks_sm.png width="182" height="271" style="border:2px solid black; vertical-align:top;" /></a>
-		<a href="/images/Cascade_lg.png><img src="/images/Cascade_sm.png width="218" height="416" style="border:2px solid black; vertical-align:top;" /></a>
+		<a href="/images/TripleBlocks_lg.png"><img src="/images/TripleBlocks_sm.png" width="182" height="271" style="border:2px solid black; vertical-align:top;" /></a>
+		<a href="/images/Cascade_lg.png"><img src="/images/Cascade_sm.png" width="218" height="416" style="border:2px solid black; vertical-align:top;" /></a>
 	</span>
 	The cascade's primary advantage is lower friction than the multi-part.<br />
 	This comes from two sources:
@@ -29,4 +28,3 @@ aliases:
 	</ol>
 </p>
 <p class="normal" style="clear:both;" />
-{% endraw %}

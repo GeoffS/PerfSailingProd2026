@@ -8,6 +8,16 @@ import os
 from pathlib import Path
 from typing import Dict, Tuple
 
+
+def normalize_reference(reference: str) -> str:
+    """Normalize relative href/src references while preserving anchors and absolute URLs."""
+    if not reference:
+        return reference
+    if reference.startswith("#") or reference.startswith("http://") or reference.startswith("https://") or reference.startswith("mailto:") or reference.startswith("/"):
+        return reference
+    return "/" + reference.lstrip("./")
+
+
 def extract_detail_page(html_content: str, filename: str) -> Tuple[str, str]:
     """Extract title and content from detail page"""
     
@@ -19,9 +29,9 @@ def extract_detail_page(html_content: str, filename: str) -> Tuple[str, str]:
     content_match = re.search(r'<div class="infoPage">(.*?)</div>\s*</div>\s*<div class="span-24">', html_content, re.DOTALL)
     if content_match:
         content_html = content_match.group(1).strip()
-        # Normalize relative paths to absolute
-        content_html = re.sub(r'href="([^"]*)"(?!:/)', r'href="/\1', content_html)
-        content_html = re.sub(r'src="([^"]*)"(?!:/)', r'src="/\1', content_html)
+        # Normalize relative paths to absolute while preserving quotes and anchors.
+        content_html = re.sub(r'href="([^"]+)"', lambda m: f'href="{normalize_reference(m.group(1))}"', content_html)
+        content_html = re.sub(r'src="([^"]+)"', lambda m: f'src="{normalize_reference(m.group(1))}"', content_html)
         return title, content_html
     
     return title, ""
@@ -43,8 +53,8 @@ aliases:
 ---
 """
     
-    # Combine front matter with content wrapped in raw HTML
-    hugo_content = front_matter + f"\n{{% raw %}}\n{content}\n{{% endraw %}}\n"
+    # Combine front matter with the extracted HTML content
+    hugo_content = front_matter + f"\n{content}\n"
     
     # Write file
     output_path = Path(content_dir) / f"{slug}.md"

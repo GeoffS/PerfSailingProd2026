@@ -7,7 +7,6 @@ aliases:
   - /DN_ChainstitchMainsheets.html
 ---
 
-{% raw %}
 <div class="h1big">Chain-Stitch Mainsheets for the DN Iceboat:</div>
 	<div class="h2">Note: color may vary.</div>
 	<hr />
@@ -21,7 +20,7 @@ aliases:
 		with a load-bearing 3mm Dyneema "core".
 	</p>
 	<div class="img650">
-		<a href="/products/IMG_6806_950.jpg target="_blank"><span class="img650"><img src="/products/IMG_6806_650.jpg width="650" height="433" /></span></a>
+		<a href="/products/IMG_6806_950.jpg" target="_blank"><span class="img650"><img src="/products/IMG_6806_650.jpg" width="650" height="433" /></span></a>
 	</div>
 	<p>
 		Here is a comparison of the size of the three sheets.
@@ -33,14 +32,13 @@ aliases:
 		The 3mm coomposite goes through 40mm blocks very easily, and will run through a 29mm block with a little bit of help (I use the sheet on my blokart<sup class="reg">®</sup> landsailer).
 	</p>
 	<div class="img250x3">
-		<a href="/products/IMG_6845_950.jpg target="_blank"><img src="/products/IMG_6845_250.jpg width="250" height="250" /></a>
-		<a href="/products/IMG_6838_950.jpg target="_blank"><img src="/products/IMG_6838_250.jpg width="250" height="250" /></a>
-		<a href="/products/IMG_6833_950.jpg target="_blank"><img src="/products/IMG_6833_250.jpg width="250" height="250" /></a>
+		<a href="/products/IMG_6845_950.jpg" target="_blank"><img src="/products/IMG_6845_250.jpg" width="250" height="250" /></a>
+		<a href="/products/IMG_6838_950.jpg" target="_blank"><img src="/products/IMG_6838_250.jpg" width="250" height="250" /></a>
+		<a href="/products/IMG_6833_950.jpg" target="_blank"><img src="/products/IMG_6833_250.jpg" width="250" height="250" /></a>
 	</div>
 	<p>
 		The 3mm composite sheet has another advantage; the tail is just 3mm diameter, so it takes up less room in the cockpit:
 	</p>
 	<div class="img650">
-		<a href="/products/IMG_6877_950.jpg target="_blank"><span class="img650"><img src="/products/IMG_6877_650.jpg width="650" height="433" /></span></a>
+		<a href="/products/IMG_6877_950.jpg" target="_blank"><span class="img650"><img src="/products/IMG_6877_650.jpg" width="650" height="433" /></span></a>
 	</div>
-{% endraw %}

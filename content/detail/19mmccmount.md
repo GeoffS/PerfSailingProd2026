@@ -7,7 +7,6 @@ aliases:
   - /19mmCCMount.html
 ---
 
-{% raw %}
 <div class="h1big">Micro Cam-Cleat Mount for 19mm (3/4 inch) Tube:</div>
 	<div class="h2">Note: cam-cleat is not included.</div>
 	<p class="img650">
@@ -31,10 +30,9 @@ aliases:
 		are an additional <b>$18.00</b>.
 	</p>
 	<p class="img650">
-		<a href="//Contact.html>Send us an e-mail or call</a> if you're interested in getting one.
+		<a href="/Contact.html">Send us an e-mail or call</a> if you're interested in getting one.
 	</p>
 	<hr />
-	<div id="navImages" class="navImages"><div style="margin-left:222.0px; margin-right:auto;"><a href="/#1><img src="/products/IMG_7482_100.jpg height="100" width="100" /></a><a href="/#2><img src="/products/IMG_7533_100.jpg height="100" width="100" /></a><a href="/#3><img src="/products/IMG_7528_100.jpg height="100" width="100" /></a></div></div>
+	<div id="navImages" class="navImages"><div style="margin-left:222.0px; margin-right:auto;"><a href="#1"><img src="/products/IMG_7482_100.jpg" height="100" width="100" /></a><a href="#2"><img src="/products/IMG_7533_100.jpg" height="100" width="100" /></a><a href="#3"><img src="/products/IMG_7528_100.jpg" height="100" width="100" /></a></div></div>
 	<hr />
-	<div id="imageList"><a id="1"><div class="img650"><img src="/products/IMG_7482_650.jpg height="650" width="650" /></div></a><a id="2"><div class="img650"><img src="/products/IMG_7533_650.jpg height="353" width="650" /></div></a><a id="3"><div class="img650"><img src="/products/IMG_7528_650.jpg height="650" width="650" /></div></a></div>
-{% endraw %}
+	<div id="imageList"><a id="1"><div class="img650"><img src="/products/IMG_7482_650.jpg" height="650" width="650" /></div></a><a id="2"><div class="img650"><img src="/products/IMG_7533_650.jpg" height="353" width="650" /></div></a><a id="3"><div class="img650"><img src="/products/IMG_7528_650.jpg" height="650" width="650" /></div></a></div>

@@ -7,7 +7,6 @@ aliases:
   - /IceSafetyPicks.html
 ---
 
-{% raw %}
 <div class="h1">3D Printed Ice Safety Picks:</div>
 	<div class="h2">Last Update: January 21, 2025 - First Version</div>
 	<hr />
@@ -17,5 +16,4 @@ aliases:
 	<p class="img650">
 		 This version is made from PETG filament with a 1/4" diameter stainless-steel spike.
 	</p>
-	<div class="img650"><img src="/misc/Ice-Picks1_650.jpg width="650" height="348" /></div>
-{% endraw %}
+	<div class="img650"><img src="/misc/Ice-Picks1_650.jpg" width="650" height="348" /></div>
