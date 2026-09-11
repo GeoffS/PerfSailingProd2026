@@ -508,3 +508,59 @@ form.PayPalButton {
 	height: 21px;
 	margin: 7px 0 0 0;
 }
+
+/* Responsive overrides — mobile-first, modern layout using flexbox */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-sizing: border-box;
+}
+.PSPBanner878x100 {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+}
+.span-24 { flex: 1 1 100%; }
+.span-4 {
+  flex: 0 0 260px;
+  box-sizing: border-box;
+}
+.span-20 {
+  flex: 1 1 calc(100% - 260px);
+  box-sizing: border-box;
+}
+.last { margin-right: 0; }
+
+/* Make images and media scale */
+img { max-width: 100%; height: auto; }
+div.photoPage img { border: 25px solid black; max-width: 100%; height: auto; box-sizing: border-box; }
+
+/* Sidebar styles */
+.sidebarLinks { width: 100%; }
+
+/* Tighter typography for small screens */
+@media (max-width: 900px) {
+  .span-4 { flex: 0 0 220px; }
+  .span-20 { flex: 1 1 calc(100% - 220px); }
+}
+
+/* Stack for narrow viewports (phones) */
+@media (max-width: 720px) {
+  .container { flex-direction: column; padding: 0 12px; }
+  .span-4, .span-20, .span-24 { flex: 1 1 100% !important; width: 100% !important; }
+  .PSPBanner878x100 { padding: 8px 0; }
+  .sidebarLinks { border: none; padding: 8px 0; background: transparent; }
+  .sidebarLink, .sidebarLinkIndent, .sidebarLinkSection { font-size: 14px; margin: 6px 0; }
+  .product, .parts, .infoPage { padding: 12px; margin: 8px 0; }
+  div.infoPage hr { width: 100%; margin-left: 0; }
+  body { background-image: none; }
+}
+
+/* Accessibility: increase tappable targets */
+@media (hover: none) {
+  a.sidebar, .sidebarLink { padding: 8px 6px; display: inline-block; }
+}
